@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LeaseHouseDetailDTO> 
+  <result>1</result>  
+  <message>返回成功</message>  
+  <HouseID>392190</HouseID>  
+  <ShikanTitle>大学时光 5号楼1单元</ShikanTitle>  
+  <HouseStatus>1</HouseStatus>  
+  <InsertTime>2016-03-02T10:28:04.443</InsertTime>  
+  <UpdateTime>2016-03-02T10:28:04.443</UpdateTime>  
+  <Price>4300.00</Price>  
+  <PriceType>元/月</PriceType>  
+  <PayDetail/>  
+  <LeaseStyle>整租</LeaseStyle>  
+  <Purpose>住宅</Purpose>  
+  <District>番禺</District>  
+  <ComArea>大学城</ComArea>  
+  <ProjCode>2811696300</ProjCode>  
+  <ProjName>大学时光</ProjName>  
+  <CreateTime/>  
+  <Address>大学城中七路66号</Address>  
+  <Room>3</Room>  
+  <Hall>2</Hall>  
+  <Floor>4</Floor>  
+  <TotalFloor>13</TotalFloor>  
+  <FloorPosition>低层/13</FloorPosition>  
+  <Forward>南北</Forward>  
+  <BuildArea>88.00</BuildArea>  
+  <Fitment>豪装</Fitment>  
+  <Equipment/>  
+  <PhotoCount>2</PhotoCount>  
+  <PhotoUrl>http://imgs.soufun.com/house/2013_12/02/gz/1385965983598_000.jpg</PhotoUrl>  
+  <ShinImgs/>  
+  <XqImgs>http://imgs.soufun.com/house/2013_12/02/gz/1385965983598_000.jpg|http://imgs.soufun.com/house/2013_12/02/gz/1385965895536_000.jpg</XqImgs>  
+  <HxImgs/>  
+  <QjImgs/>  
+  <Phone400>4008903341转196082</Phone400>  
+  <CrownUserID>0</CrownUserID>  
+  <BoardContent>家具家电齐全</BoardContent>  
+  <HouseType>4</HouseType>  
+  <CommissionWireLess/>  
+  <OwnerDescription/>  
+  <OwnerName>胡女士</OwnerName>  
+  <IsOpenDisctrict>1</IsOpenDisctrict>  
+  <OwnerPhone400/>  
+  <DelegationType/>  
+  <DelegationTypeInt>1</DelegationTypeInt>  
+  <AgentIDList> 
+    <AgentID>155123206</AgentID>  
+    <AgentID>163640593</AgentID>  
+    <AgentID>163984507</AgentID>  
+    <AgentID>164057101</AgentID>  
+    <AgentID>164086121</AgentID> 
+  </AgentIDList>  
+  <IsFiredHouse>0</IsFiredHouse>  
+  <linkurl>http://m.fang.com/zf/gz/DS_392190.html</linkurl>
+  <CommentList/>
+  <coordx>113.41069793701172</coordx>
+  <coordy>23.04681396484375</coordy>
+  <aroundService><![CDATA[小区:儿童游乐空间、健身室、中心泳池、休闲平台、兵兵球室等; 学校:广大附属中学大学城校区、2所省级标准小学、区内四个保留村内将各建设一所小学、区内四个保留村内将各建设一所幼儿园; 商场:广大商业中心、北亭广场、东门广场、商业南区、商业北区; 医院:广东省中医院大学城分院; 银行:工]]></aroundService>
+  <traffic_other><![CDATA[公交:310路 地铁:4号线大学城南站]]></traffic_other>
+  <SubwayLine>4号线</SubwayLine>
+  <SubwayStation>大学城南站</SubwayStation>
+  <SubwayDistance>536</SubwayDistance>
+</LeaseHouseDetailDTO>
