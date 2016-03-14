@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.fmh.youfound.source.entity.LeaseHouseSource;
+import com.soufang.zufang.entity.LeaseHouseSource;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
