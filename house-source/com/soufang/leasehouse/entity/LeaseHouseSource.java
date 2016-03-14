@@ -1,4 +1,4 @@
-package com.soufang.zufang.entity;
+package com.soufang.leasehouse.entity;
 
 import java.io.Serializable;
 

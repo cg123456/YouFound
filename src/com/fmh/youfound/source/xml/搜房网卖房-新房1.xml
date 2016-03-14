@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<house>
+    <house_id>2811930226</house_id>
+    <projname>
+        <![CDATA[北部万科城]]>
+    </projname>
+    <district>
+        <![CDATA[清远]]>
+    </district>
+    <comarea />
+    <park>
+        <![CDATA[停车位的配比为1:3，三期有地下车库，共三层，室内停车价格250 元/位·月，室外停车价格150 元/位·月。]]>
+    </park>
+    <right_year>70年</right_year>
+    <priceaverage>均价5500元/平方米</priceaverage>
+    <pricetype>
+        <![CDATA[均价]]>
+    </pricetype>
+    <purpose>
+        <![CDATA[住宅]]>
+    </purpose>
+    <district_price>
+        <![CDATA[元/平方米]]>
+    </district_price>
+    <has_pinggu>1</has_pinggu>
+    <yearadd>0.08</yearadd>
+    <zhulihuxing>
+        <![CDATA[Q13Q15栋06户型,北万90平3房户型图（2015.4.14）,北万107平3房户型图（2015.4.14）]]>
+    </zhulihuxing>
+    <house_feature>
+        <![CDATA[品牌地产,小户型,地铁沿线,花园洋房,景观居所,宜居生态地产,公园地产]]>
+    </house_feature>
+    <bookhouseCount>676</bookhouseCount>
+    <privilege />
+    <bbspost>
+        <![CDATA[10526]]>
+    </bbspost>
+    <bbsurl>
+        <![CDATA[http://m.fang.com/bbs.d?m=postlist&city=gz&sign=2811930226&src=client]]>
+    </bbsurl>
+    <bbsid>
+        <![CDATA[2811930226]]>
+    </bbsid>
+    <Tuan_Discount>
+        <aid />
+        <Discount />
+        <DiscountBtime />
+        <DiscountEtime />
+        <signcount />
+        <roomcount />
+        <PCTitle />
+        <wapTitle />
+        <shortWapTitle />
+        <isTailHouseProj>
+            <![CDATA[0]]>
+        </isTailHouseProj>
+        <mobilePayment />
+        <wapurl>
+            <![CDATA[http://m.fang.com/tuan.d?m=tuaninfo&city=&id=]]>
+        </wapurl>
+    </Tuan_Discount>
+    <Kuang_Discount>
+        <Kuang_aid />
+        <Kuang_acid />
+        <Kuang_Discount_Num />
+        <Kuang_minDiscount_Num />
+        <Kuang_k_GuangGaoyu />
+        <Kuang_DiscountBtime />
+        <Kuang_DiscountEtime />
+        <Kuang_AveragePrice />
+        <Kuang_huxing />
+        <Kuang_signcount />
+        <Kuang_PCTitle />
+        <Kuang_wapTitle />
+        <Kuang_shortWapTitle />
+        <Kuang_wapurl />
+        <Kuang_pcurl />
+    </Kuang_Discount>
+    <Pai_Discount>
+        <Pai_Pai_ID />
+        <Pai_Pai_FengDingPrice />
+        <Pai_Discount_Num />
+        <Pai_DiscountBtime />
+        <Pai_DiscountEtime />
+        <Pai_AveragePrice />
+        <Pai_huxing />
+        <Pai_signcount />
+        <Pai_PCTitle />
+        <Pai_wapTitle />
+        <Pai_shortWapTitle />
+        <Pai_wapurl>
+            <![CDATA[http://m.fang.com/house/auction/projDetail.aspx?v=16FCAE06EEBF8E725CE62070BBB629D3&from=app]]>
+        </Pai_wapurl>
+    </Pai_Discount>
+    <dongtai_num>10</dongtai_num>
+    <dongtai_one>
+        <title>
+            <![CDATA[北部万科城洋房认筹中]]>
+        </title>
+        <content>北部万科城推出全新组团拾光集Q11，B46，目前认筹中，预计月底开盘，户型为约60-107㎡二至三房带装修洋房，均价约5500元/平米起。现场推出首付3万起轻松置业万科活动，并享认筹返收益，具体请咨询现场。\n</content>
+        <registdate>2016-03-07 11:07:09</registdate>
+    </dongtai_one>
+    <saling>在售</saling>
+    <outdoor_pic>
+        <![CDATA[http://img.soufun.com/house/2014_04/16/gz/1397619967017_000.jpg]]>
+    </outdoor_pic>
+    <picture_count>340</picture_count>
+    <!-- <comarea /> -->
+    <proj_desc>
+        <![CDATA[北部万科城项目地处广州和清远交界处，广清高速龙塘出口右转3公里即可到达。项目盘踞广清同城核心区域，近轻轨龙塘、银盏双站，揽葱郁绵绵王子山，赏约30万㎡碧波荡漾原生湖。项目占地约1800亩，建筑面积约250万㎡，未来将形成4-6万居住人口规模的大型生态型城市社区。目前已有逾8000户业主收楼，社区发展成熟。在售的有二期和三期洋房组团，以及“花园里的鱼”双拼联排别墅组团。
+
+北部万科城规模自成一体，城中涵盖公园区、教育区、商业等各种区域。在配套方面，幼儿园、公立小学、中学；社区医疗中心保障全家身心健康；湖畔风情商业街盛大开业，华润万家、第五食堂、幸福街市携众多精选商户率先进驻；未来还有逾万平米商业广场，多彩生活即将全面升级。
+
+万科城内还有VO club——万科乐享汇，联袂白天鹅、星期八家园、“珠江之友”皮划艇俱乐部定制个性化度假服务，五星品质料理、湖畔有氧健身、亲子互动乐园、时尚趣味Party等。物业方面，由万科物业管理，全心全意贴心服务；万科物业爱心驿站，为您签收快件、订购米面粮油等，品质物管只为大城生活幸福美满。]]>
+    </proj_desc>
+    <address>清远广清高速龙塘出口右转3公里（清城区石角镇马头村大坑水库旁）</address>
+    <round_station />
+    <build_category>
+        <![CDATA[板塔结合,小高层,高层]]>
+    </build_category>
+    <sale_date />
+    <live_date>
+        <![CDATA[2016年12月Q14-Q15栋入住]]>
+    </live_date>
+    <fix_status>
+        <![CDATA[精装修]]>
+    </fix_status>
+    <dimension>
+        <![CDATA[2.08]]>
+    </dimension>
+    <virescence_rate>
+        <![CDATA[35.00]]>
+    </virescence_rate>
+    <total_door>10000</total_door>
+    <sale_card>
+        <![CDATA[清建预许字第2013032号]]>
+    </sale_card>
+    <property_fee>
+        <![CDATA[2.30元/平方米·月]]>
+    </property_fee>
+    <manager>
+        <![CDATA[万科物业]]>
+    </manager>
+    <developer>
+        <![CDATA[清远市宏美投资有限公司 ]]>
+    </developer>
+    <proj_certitype>
+        <![CDATA[1 ]]>
+    </proj_certitype>
+    <sale_address>
+        <![CDATA[广州市越秀区地铁2号线越秀公园站A出口以太广场]]>
+    </sale_address>
+    <map_coord_x>113.06153106689453125000</map_coord_x>
+    <map_coord_y>23.54249382019042968750</map_coord_y>
+    <baidu_coord_x>113.06153106689453125000</baidu_coord_x>
+    <baidu_coord_y>23.54249382019042968750</baidu_coord_y>
+    <around_service>教育配套：社区内规划有幼儿园，小学及中学。其中一所小学为公立性质，计划于2014年与幼儿园一起招生开班。
+商业配套：项目包括逾8万㎡三大商业中心。一期悦湖风情商业街已经开业，美食街拥有第五食堂、东北一家人、金稻田私厨等商家，为社区提供风味餐饮。社区超市华润万家于2012年11月30日正式开业，全方面满足社区内业主生活需要。
+医院配套：社区医疗服务中心
+银行配套：社区工商银行自助银行即将开业 
+度假配套：星期八小镇进驻，白天鹅度假酒店即将试业。  小区内部配套：立体交通、一站式教育、缤纷商业、社区医疗、度假酒店，全功能无忧配套，筑就丰盛至醇大城。山水之中，畅享舒适生活，回归都市闲情。 </around_service>
+    <traffic>清远途径公交：210路在万科城站口下车
+
+驾车：广清高速龙塘出口右转3公里即达项目，广清城际轻轨，近龙塘、银盏双站,到广州约1小时车程
+
+从项目到广州设置收费楼巴北万班车总时刻表：
+嘉禾望岗班车周一至周日发车时间：
+北万-嘉禾望岗：6:45、14:30
+嘉禾望岗-北万：10:00、19:30
+以太班车工作日班车发车时刻表：
+北万-以太：7:00、7:30、12:00、16:00
+以太-北万：10:00、11:00、18:45、20:00、21:00
+以太班车周六、日（含国家法定节假日）班车发车时刻表：
+北万-以太：7:00、9:00、11:00、13:00、14:30、16:00、17:00、18:00、20:00
+以太-北万：9:30、10:00、10:30、11:00、13:00、15:00、17:00、19:00、21:00</traffic>
+    <telephone>4008901111 转 18464</telephone>
+    <teleclient>
+        <![CDATA[4008901111 转 18464]]>
+    </teleclient>
+    <linkurl>http://m.fang.com/houseinfo/gz/2811930226.html</linkurl>
+    <shijingcount>53</shijingcount>
+    <yijucount>0</yijucount>
+    <erjucount>0</erjucount>
+    <sanjucount>10</sanjucount>
+    <sijucount>0</sijucount>
+    <wujucount>0</wujucount>
+    <qitacount>0</qitacount>
+    <waijingcount>37</waijingcount>
+    <jiaotongcount>4</jiaotongcount>
+    <peitaocount>29</peitaocount>
+    <yangbancount>23</yangbancount>
+    <xiaoguocount>60</xiaoguocount>
+    <xianchangcount>31</xianchangcount>
+    <shijingimg>http://imgs.soufun.com/house/2013_07/18/gz/1374137414510_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976502030_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976503289_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976504208_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976504930_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976505614_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976506250_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976506915_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976507576_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976509118_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976509775_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976510349_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428976510928_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888095024_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888099200_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888100943_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888102834_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888104758_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888109139_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888110401_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888114847_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888119681_000.jpg,http://imgs.soufun.com/house/2015_03/09/gz/1425888120554_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619363740_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619364707_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619365481_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619367024_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619367779_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987887669_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987886372_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987884805_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987635326_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137952488_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137957190_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137951520_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137953416_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137413254_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137415406_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137416872_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137419227_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137420405_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137421326_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137422670_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137423814_000.jpg,http://imgs.soufun.com/house/2013_07/09/gz/1373335494927_000.jpg,http://imgs.soufun.com/house/2013_07/09/gz/1373335515721_000.jpg,http://imgs.soufun.com/house/2013_07/09/gz/1373335433929_000.jpg,http://imgs.soufun.com/house/2013_04/12/gz/1365761036692_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682285341_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682280855_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648425567_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648427654_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648430177_000.jpg</shijingimg>
+    <yijuhxid></yijuhxid>
+    <yijuimg></yijuimg>
+    <yijupicid></yijupicid>
+    <yijuimg_taonum></yijuimg_taonum>
+    <yijuimg_detail></yijuimg_detail>
+    <yijuimg_detail_mianji></yijuimg_detail_mianji>
+    <yijuimg_title></yijuimg_title>
+    <yijuimg_price></yijuimg_price>
+    <erjuhxid></erjuhxid>
+    <erjuimg></erjuimg>
+    <erjupicid></erjupicid>
+    <erjuimg_taonum></erjuimg_taonum>
+    <erjuimg_detail></erjuimg_detail>
+    <erjuimg_detail_mianji></erjuimg_detail_mianji>
+    <erjuimg_title></erjuimg_title>
+    <erjuimg_price></erjuimg_price>
+    <sanjuhxid>554925,554926,554899,554640,554641,554642,489279,489280,489281,489282</sanjuhxid>
+    <sanjuimg>http://imgs.soufun.com/house/2015_04/15/gz/1429089244207_000.jpg,http://imgs.soufun.com/house/2015_04/15/gz/1429089245550_000.jpg,http://imgs.soufun.com/house/2015_04/15/gz/1429087920928_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428993787260_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428993788956_000.jpg,http://imgs.soufun.com/house/2015_04/14/gz/1428993790084_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397714611408_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397714613122_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397714614736_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397714616330_000.jpg</sanjuimg>
+    <sanjupicid>158277881,158277882,158275230,158208749,158208755,158208758,143707674,143707679,143707681,143707685</sanjupicid>
+    <sanjuimg_taonum>http://imgs.soufun.com/house/2015_04/15/gz/1429089244207_000.jpg|,http://imgs.soufun.com/house/2015_04/15/gz/1429089245550_000.jpg|,http://imgs.soufun.com/house/2015_04/15/gz/1429087920928_000.jpg|,http://imgs.soufun.com/house/2015_04/14/gz/1428993787260_000.jpg|,http://imgs.soufun.com/house/2015_04/14/gz/1428993788956_000.jpg|,http://imgs.soufun.com/house/2015_04/14/gz/1428993790084_000.jpg|,http://img.soufun.com/house/2014_04/17/gz/1397714611408_000.jpg|,http://img.soufun.com/house/2014_04/17/gz/1397714613122_000.jpg|,http://img.soufun.com/house/2014_04/17/gz/1397714614736_000.jpg|,http://img.soufun.com/house/2014_04/17/gz/1397714616330_000.jpg|</sanjuimg_taonum>
+    <sanjuimg_detail>3室 90㎡,3室 107㎡,3室 79㎡,3室 79㎡,3室 90㎡,3室 107㎡,3室 90㎡,3室 105㎡,3室 79㎡,3室 79㎡</sanjuimg_detail>
+    <sanjuimg_detail_mianji>90,107,79,79,90,107,90,105,79,79</sanjuimg_detail_mianji>
+    <sanjuimg_title>北万90平3房户型图（2015.4.14）,北万107平3房户型图（2015.4.14）,北万79平3房户型图（2015.4.14）,北万79平3房户型图（2015.4.14）,北万90平3房户型图（2015.4.14）,北万107平3房户型图（2015.4.14）,Q13Q15栋06户型,Q12Q14栋06户型,Q13Q15栋02户型,Q13Q15栋04户型</sanjuimg_title>
+    <sanjuimg_price>495000,588500,434500,434500,495000,588500,495000,577500,434500,434500</sanjuimg_price>
+    <sijuhxid></sijuhxid>
+    <sijuimg></sijuimg>
+    <sijupicid></sijupicid>
+    <sijuimg_taonum></sijuimg_taonum>
+    <sijuimg_detail></sijuimg_detail>
+    <sijuimg_detail_mianji></sijuimg_detail_mianji>
+    <sijuimg_title></sijuimg_title>
+    <sijuimg_price></sijuimg_price>
+    <wujuhxid></wujuhxid>
+    <wujuimg></wujuimg>
+    <wujupicid></wujupicid>
+    <wujuimg_taonum></wujuimg_taonum>
+    <wujuimg_detail></wujuimg_detail>
+    <wujuimg_detail_mianji></wujuimg_detail_mianji>
+    <wujuimg_title></wujuimg_title>
+    <wujuimg_price></wujuimg_price>
+    <qitahxid></qitahxid>
+    <qitaimg></qitaimg>
+    <qitapicid></qitapicid>
+    <qitaimg_taonum></qitaimg_taonum>
+    <qitaimg_detail></qitaimg_detail>
+    <qitaimg_detail_mianji></qitaimg_detail_mianji>
+    <qitaimg_title></qitaimg_title>
+    <qitajuimg_price></qitajuimg_price>
+    <waijingimg>http://img.soufun.com/house/2014_04/16/gz/1397619366245_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619362750_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989372545_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989373656_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989374700_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989375785_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989379742_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989381357_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989382425_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989383885_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989385330_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989386819_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818517253_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818518247_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818519502_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818520474_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818521707_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818522609_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818348187_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818314085_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818294811_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818269714_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818247252_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818220770_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818158953_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137948088_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137946864_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137949511_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137950552_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137816155_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137818155_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137819296_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137820229_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374137821598_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682283159_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648227057_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648224242_000.jpg</waijingimg>
+    <jiaotongimg>http://imgs.soufun.com/house/2013_11/22/gz/1385090705457_000.jpg,http://imgs.soufun.com/house/2013_04/15/gz/1366007917221_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362648083575_000.jpg,http://imgs.soufun.com/house/2013_01/30/gz/1359517030354_000.jpg</jiaotongimg>
+    <peitaoimg>http://img.soufun.com/house/2014_04/16/gz/1397619224291_000.jpg,http://imgs.soufun.com/house/2014_06/20/gz/1403232330167_000.jpg,http://imgs.soufun.com/house/2014_06/20/gz/1403232340279_000.jpg,http://imgs.soufun.com/house/2014_06/20/gz/1403232349141_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619217978_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619218731_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619219443_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619220109_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619220735_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619221366_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619221984_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619222587_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619223195_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619225003_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619225609_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138588684_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138587728_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138589786_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138590840_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138591825_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138592725_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138593851_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138594908_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138595983_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138597453_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138598338_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682301310_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650541473_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650543520_000.jpg</peitaoimg>
+    <yangbanimg>http://img.soufun.com/house/2014_04/16/gz/1397619678997_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619678065_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619677403_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619679729_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649869053_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649870676_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649872094_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649874308_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649875999_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649877934_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649879520_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649829130_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649832663_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649831615_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649830593_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649827587_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649826450_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649825062_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649823820_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649822180_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649820872_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649819273_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649833706_000.jpg</yangbanimg>
+    <xiaoguoimg>http://img.soufun.com/house/2014_04/17/gz/1397705978656_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619967017_000.jpg,http://imgs.soufun.com/house/2013_08/19/gz/1376884052805_000.jpg,http://imgs.soufun.com/house/2015_01/13/gz/1421134562527_000.jpg,http://imgs.soufun.com/house/2014_12/03/gz/1417598269808_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706812599_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706814146_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706815414_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706816943_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706818736_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706820179_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706824830_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706826610_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706828152_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706829929_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706831599_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706833307_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706713891_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706715463_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706716928_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706720483_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706722855_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706725036_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706726984_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706729536_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706732431_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706734187_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706736258_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706738226_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706330394_000.jpg,http://img.soufun.com/house/2014_04/17/gz/1397706281363_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397619804518_000.jpg,http://img.soufun.com/house/2014_04/16/gz/1397617100119_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393989378430_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987511454_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987512502_000.jpg,http://imgs.soufun.com/house/2014_03/05/gz/1393987516564_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818719328_000.jpg,http://imgs.soufun.com/house/2014_03/03/gz/1393818720744_000.jpg,http://imgs.soufun.com/house/2013_08/19/gz/1376884053841_000.jpg,http://imgs.soufun.com/house/2013_08/19/gz/1376884055902_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138385936_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138393393_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138398533_000.jpg,http://imgs.soufun.com/house/2013_07/18/gz/1374138399984_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649210179_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649207502_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649206464_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649204874_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649201038_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649202896_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649199814_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649198744_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649148838_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649151426_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649152639_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649153673_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649154957_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649156627_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362649158256_000.jpg</xiaoguoimg>
+    <xianchangimg>http://imgs.soufun.com/house/2014_03/05/gz/1393989377066_000.jpg,http://imgs.soufun.com/house/2013_08/21/gz/1377051260628_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682287590_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682289470_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682292925_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682291586_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682294625_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682296654_000.jpg,http://imgs.soufun.com/house/2013_03/19/gz/1363682298444_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650365277_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650369345_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650370915_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650372807_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650374244_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650367037_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650363703_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650362143_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650360725_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650359558_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650375973_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650311366_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650308785_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650307437_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650305883_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650304737_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650302389_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650296718_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650309930_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650300721_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650299364_000.jpg,http://imgs.soufun.com/house/2013_03/07/gz/1362650298212_000.jpg</xianchangimg>
+    <titleimg>http://imgs.soufun.com/house/2013_07/18/gz/1374137414510_000.jpg</titleimg>
+    <zhulihuxingindex>6;0;1</zhulihuxingindex>
+    <priceint>5500</priceint>
+    <bbspostlist>
+        <singlepost>
+            <announceid>288838578</announceid>
+            <tid>0</tid>
+            <bid>-1</bid>
+            <masterId>288838578</masterId>
+            <userName>
+                <![CDATA[87268老外]]>
+            </userName>
+            <userId>43300097</userId>
+            <UserImage>http://imgtx.3g.fang.com/getavatar.api?userid=43300097&amp;type=get</UserImage>
+            <supportcnt>0</supportcnt>
+            <topic>
+                <![CDATA[坚持抗毒，坚信北万的明天会更好]]>
+            </topic>
+            <fuCount>3</fuCount>
+            <hits>2305</hits>
+            <bbsmurl>
+                <![CDATA[http://m.fang.com/bbs/?a=quanpostinfo&city=gz&sign=2811930226&masterId=288838578]]>
+            </bbsmurl>
+            <posturl>
+                <![CDATA[http://m.fang.com/bbs.d?m=postinfo&city=gz&sign=2811930226&masterId=288838578&src=client]]>
+            </posturl>
+        </singlepost>
+        <singlepost>
+            <announceid>288838517</announceid>
+            <tid>0</tid>
+            <bid>-1</bid>
+            <masterId>288838517</masterId>
+            <userName>
+                <![CDATA[87268老外]]>
+            </userName>
+            <userId>43300097</userId>
+            <UserImage>http://imgtx.3g.fang.com/getavatar.api?userid=43300097&amp;type=get</UserImage>
+            <supportcnt>0</supportcnt>
+            <topic>
+                <![CDATA[北部万科城首届选美活]]>
+            </topic>
+            <fuCount>3</fuCount>
+            <hits>4358</hits>
+            <bbsmurl>
+                <![CDATA[http://m.fang.com/bbs/?a=quanpostinfo&city=gz&sign=2811930226&masterId=288838517]]>
+            </bbsmurl>
+            <posturl>
+                <![CDATA[http://m.fang.com/bbs.d?m=postinfo&city=gz&sign=2811930226&masterId=288838517&src=client]]>
+            </posturl>
+        </singlepost>
+        <singlepost>
+            <announceid>288838473</announceid>
+            <tid>0</tid>
+            <bid>-1</bid>
+            <masterId>288838473</masterId>
+            <userName>
+                <![CDATA[87268老外]]>
+            </userName>
+            <userId>43300097</userId>
+            <UserImage>http://imgtx.3g.fang.com/getavatar.api?userid=43300097&amp;type=get</UserImage>
+            <supportcnt>0</supportcnt>
+            <topic>
+                <![CDATA[相信北部万科城明天会更好，坚持留守]]>
+            </topic>
+            <fuCount>7</fuCount>
+            <hits>3536</hits>
+            <bbsmurl>
+                <![CDATA[http://m.fang.com/bbs/?a=quanpostinfo&city=gz&sign=2811930226&masterId=288838473]]>
+            </bbsmurl>
+            <posturl>
+                <![CDATA[http://m.fang.com/bbs.d?m=postinfo&city=gz&sign=2811930226&masterId=288838473&src=client]]>
+            </posturl>
+        </singlepost>
+        <singlepost>
+            <announceid>288838446</announceid>
+            <tid>0</tid>
+            <bid>-1</bid>
+            <masterId>288838446</masterId>
+            <userName>
+                <![CDATA[87268老外]]>
+            </userName>
+            <userId>43300097</userId>
+            <UserImage>http://imgtx.3g.fang.com/getavatar.api?userid=43300097&amp;type=get</UserImage>
+            <supportcnt>0</supportcnt>
+            <topic>
+                <![CDATA[北部万科城民选美女活动]]>
+            </topic>
+            <fuCount>4</fuCount>
+            <hits>3602</hits>
+            <bbsmurl>
+                <![CDATA[http://m.fang.com/bbs/?a=quanpostinfo&city=gz&sign=2811930226&masterId=288838446]]>
+            </bbsmurl>
+            <posturl>
+                <![CDATA[http://m.fang.com/bbs.d?m=postinfo&city=gz&sign=2811930226&masterId=288838446&src=client]]>
+            </posturl>
+        </singlepost>
+        <singlepost>
+            <announceid>288838343</announceid>
+            <tid>0</tid>
+            <bid>-1</bid>
+            <masterId>288838343</masterId>
+            <userName>
+                <![CDATA[87268老外]]>
+            </userName>
+            <userId>43300097</userId>
+            <UserImage>http://imgtx.3g.fang.com/getavatar.api?userid=43300097&amp;type=get</UserImage>
+            <supportcnt>0</supportcnt>
+            <topic>
+                <![CDATA[北部万科城年味之业主自驾游第三天——偶遇云海]]>
+            </topic>
+            <fuCount>4</fuCount>
+            <hits>3645</hits>
+            <bbsmurl>
+                <![CDATA[http://m.fang.com/bbs/?a=quanpostinfo&city=gz&sign=2811930226&masterId=288838343]]>
+            </bbsmurl>
+            <posturl>
+                <![CDATA[http://m.fang.com/bbs.d?m=postinfo&city=gz&sign=2811930226&masterId=288838343&src=client]]>
+            </posturl>
+        </singlepost>
+    </bbspostlist>
+    <lookhouse>
+        <LookHouseID>12675</LookHouseID>
+        <LookHouseName>
+            <![CDATA[3.12-13看房团]]>
+        </LookHouseName>
+        <LineID>26839</LineID>
+        <LineName>
+            <![CDATA[周六广州北线]]>
+        </LineName>
+        <ActivitieDate>
+            <![CDATA[2016-03-12]]>
+        </ActivitieDate>
+        <BeginTime>
+            <![CDATA[2016-02-29]]>
+        </BeginTime>
+        <EndTime>
+            <![CDATA[2016-03-13]]>
+        </EndTime>
+        <SignUpCount>68</SignUpCount>
+    </lookhouse>
+    <videos>
+        <video>
+            <vid>78367</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城项目简介 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2013_08/19/gz/1376884053841_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/dd30f59a51384651a94c1994e6d2a45c.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/dd30f59a51384651a94c1994e6d2a45c.mp4</video_url_mp4>
+            <time_len>499</time_len>
+            <play_num>7845</play_num>
+            <registdate>2014/4/16 17:11:32</registdate>
+        </video>
+        <video>
+            <vid>78383</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城开发商介绍 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2013_08/19/gz/1376884055902_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/b82010d2163843a98bb9d3d579d25f04.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/b82010d2163843a98bb9d3d579d25f04.mp4</video_url_mp4>
+            <time_len>94</time_len>
+            <play_num>4859</play_num>
+            <registdate>2014/4/16 17:26:43</registdate>
+        </video>
+        <video>
+            <vid>78366</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城项目规划 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2013_03/07/gz/1362649210179_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/f25e8a005f5046e39bb069fa37d15dff.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/f25e8a005f5046e39bb069fa37d15dff.mp4</video_url_mp4>
+            <time_len>115</time_len>
+            <play_num>3428</play_num>
+            <registdate>2014/4/16 17:15:09</registdate>
+        </video>
+        <video>
+            <vid>78364</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城区域交通介绍 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2013_04/15/gz/1366007917221_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/dd906cc9d1da486d9410509082c77728.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/dd906cc9d1da486d9410509082c77728.mp4</video_url_mp4>
+            <time_len>92</time_len>
+            <play_num>3036</play_num>
+            <registdate>2014/4/16 17:18:09</registdate>
+        </video>
+        <video>
+            <vid>78363</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城户型介绍 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2013_04/12/gz/1365749293874_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/98441fd458ff48d0960cd8c43ae37ccb.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/98441fd458ff48d0960cd8c43ae37ccb.mp4</video_url_mp4>
+            <time_len>55</time_len>
+            <play_num>3543</play_num>
+            <registdate>2014/4/16 17:21:38</registdate>
+        </video>
+        <video>
+            <vid>78362</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城样板间介绍 ]]>
+            </title>
+            <pic_url>http://img.soufun.com/house/2014_04/16/gz/1397619678997_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/d0b532a0841c4960b97fee2ce3ededda.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/d0b532a0841c4960b97fee2ce3ededda.mp4</video_url_mp4>
+            <time_len>96</time_len>
+            <play_num>2704</play_num>
+            <registdate>2014/4/16 17:23:35</registdate>
+        </video>
+        <video>
+            <vid>78361</vid>
+            <newcode>2811930226</newcode>
+            <title>
+                <![CDATA[清远北部万科城园林实景介绍 ]]>
+            </title>
+            <pic_url>http://imgs.soufun.com/house/2014_03/05/gz/1393987886372_000.jpg</pic_url>
+            <video_url>http://video2s.soufun.com/2014/04/16/bj/mp4/3d1495ede5e94c208a011d29076385c6.mp4</video_url>
+            <video_url_mp4>http://video2s.soufun.com/2014/04/16/bj/mp4/3d1495ede5e94c208a011d29076385c6.mp4</video_url_mp4>
+            <time_len>41</time_len>
+            <play_num>3038</play_num>
+            <registdate>2014/4/16 17:24:48</registdate>
+        </video>
+    </videos>
+    <videocount>7</videocount>
+    <allcountimg>254</allcountimg>
+    <districtinfo_match>
+        <city>广州</city>
+        <district>清远</district>
+        <cityMatch>广州</cityMatch>
+        <districtMatch>清远</districtMatch>
+        <areaMatch />
+        <disType>2</disType>
+    </districtinfo_match>
+    <taglist>
+        <tag_0>
+            <![CDATA[在售]]>
+        </tag_0>
+        <tag_1>
+            <![CDATA[板塔结合]]>
+        </tag_1>
+        <tag_2>
+            <![CDATA[花园洋房]]>
+        </tag_2>
+        <tag_3>
+            <![CDATA[普通住宅]]>
+        </tag_3>
+    </taglist>
+    <ChannelProjByNewcode>
+        <resultCode>002</resultCode>
+        <resultMsg>获取项目信息异常或者没有数据</resultMsg>
+    </ChannelProjByNewcode>
+    <xuexiao />
+    <xuexiao_new />
+    <keshou />
+    <isOrdinaryLoupan>1</isOrdinaryLoupan>
+    <newstyle>1</newstyle>
+    <areatype>建面</areatype>
+    <areadescription>本页提及面积，无特殊说明均指建筑面积</areadescription>
+</house>

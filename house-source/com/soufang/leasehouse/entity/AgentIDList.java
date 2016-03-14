@@ -1,4 +1,4 @@
-package com.soufang.zufang.entity;
+package com.soufang.leasehouse.entity;
 
 import java.util.List;
 
@@ -24,9 +24,11 @@ public class AgentIDList {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<AgentID.size();i++) {
-			sb.append(AgentID.get(i));
-			sb.append('|');
+		if(AgentID != null) {
+			for(int i=0;i<AgentID.size();i++) {
+				sb.append(AgentID.get(i));
+				sb.append('|');
+			}
 		}
 		return sb.toString();
 	}
