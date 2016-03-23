@@ -1151,6 +1151,14 @@ public class SaleHouse {
 		this.priceint = priceint;
 	}
 
+	public String getHouse_feature() {
+		return house_feature;
+	}
+
+	public void setHouse_feature(String house_feature) {
+		this.house_feature = house_feature;
+	}
+
 	public BbsPostList getBbspostlist() {
 		return bbspostlist;
 	}
