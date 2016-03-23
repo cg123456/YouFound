@@ -10,7 +10,7 @@ import com.soufang.leasehouse.entity.CommentListNew;
 * @version 1.0 
 */
 
-public class LeaseHouse {
+public class YFLeaseHouse {
 
 	private String id;
 	private String sourceId;
@@ -32,7 +32,7 @@ public class LeaseHouse {
 	private String projectCode;		//工程代号
 	private String projectName;
 	
-	private HouseType hourseType;	//三房一厅等
+	private HouseType hourseType;	//三房一厅两卫一厨等
 	
 	//location
 	private String floor;			//楼层

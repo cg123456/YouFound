@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 */
 @Entity
 @XStreamAlias("house")
-public class SaleHouse {
+public class SaleHouseSource {
 
 	private String house_id;
 	private String projname;			//中海花湾壹号
@@ -173,7 +173,7 @@ public class SaleHouse {
 	private String areatype;
 	private String areadescription;
 	
-	public SaleHouse() {}
+	public SaleHouseSource() {}
 
 	public String getHouse_id() {
 		return house_id;

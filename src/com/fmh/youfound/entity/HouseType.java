@@ -9,5 +9,8 @@ public class HouseType {
 	private String id;
 	private int roomNum;	//房间数
 	private int hallNum;	//厅数
+	private int kitchen;	//厨房数
+	private int toilet;		//卫生间数
+	
 
 }

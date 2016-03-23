@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import com.soufang.leasehouse.entity.LeaseHouseSource;
-import com.soufang.salehouse.entity.SaleHouse;
+import com.soufang.salehouse.entity.SaleHouseSource;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
@@ -20,7 +20,7 @@ public class XmlUtils {
 		//String str = xmlFileToString("src/com/fmh/youfound/source/xml/leasehouse-zufang.com-2.xml");
 		//LeaseHouseSource lhs = (LeaseHouseSource) toBean(new File("src/com/fmh/youfound/source/xml/搜房网租房1.xml"),LeaseHouseSource.class);
 		//LeaseHouseSource lhs = (LeaseHouseSource) toBean(str,LeaseHouseSource.class);
-		SaleHouse sh = toBean(new File("src/com/fmh/youfound/source/xml/搜房网卖房-新房1.xml"), SaleHouse.class);
+		SaleHouseSource sh = toBean(new File("src/com/fmh/youfound/source/xml/搜房网卖房-新房1.xml"), SaleHouseSource.class);
 		System.out.println(sh.toString());
 	}
 	
