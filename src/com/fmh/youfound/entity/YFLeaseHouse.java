@@ -26,7 +26,7 @@ public class YFLeaseHouse {
 	private String payDetail;		//房租支付细节，如：押一付二
 	private String leaseType;		//出租类型，整租，月租，合租，短租等
 	
-	private String purpose;			//用途，住宅，商业等
+	private String purpose;			//用途：住宅，别墅，写字楼，商铺等
 	private Address address;		//地址：哪个城市，哪个区，路，具体地址，以及经度和纬度
 	
 	private String projectCode;		//工程代号
@@ -42,8 +42,8 @@ public class YFLeaseHouse {
 	
 	
 	private String buildArea;		//房屋面积
-	private String fitment;			//装修类型
-	private String equipment;		//配套设施
+	private String fitment;			//装修类型：豪华装修，精装修，中等装修，简装修，毛坯房
+	private String equipment;		//配套设施：床，宽带，电视，冰箱，洗衣机，空调，热水器，暖气
 	
 	//图片
 	private String photoCount;		//图片数量
