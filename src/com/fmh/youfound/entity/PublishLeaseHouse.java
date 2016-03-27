@@ -3,7 +3,9 @@ package com.fmh.youfound.entity;
 import java.util.UUID;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /** 
  * @author fengmuhai
@@ -14,7 +16,7 @@ import javax.persistence.Id;
 public class PublishLeaseHouse {
 
 	@Id
-	private UUID id;
+	private Long id;
 		
 	private String purpose;			//用途：住宅，别墅，写字楼，商铺等
 	private String leaseType;		//出租类型，整租，月租，合租，短租等
@@ -45,10 +47,10 @@ public class PublishLeaseHouse {
 	
 	private String contactPerson;	//联系人
 	private String contactNumber;	//联系电话
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getPurpose() {
