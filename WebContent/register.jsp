@@ -8,6 +8,7 @@
 <title>Registration Page</title>
 </head>
 <body>
+<div style="text-align:center;">
 	<form action="user.do" method="post">
 		&nbsp;用户名：<input type="text" name="username"><br><br>
 		&nbsp;&nbsp;密码：<input type="password" name="password"><br><br>
@@ -15,5 +16,7 @@
 		&nbsp;&nbsp;邮箱：<input type="text" name="email"><br><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交"><br>
 	</form>
+</div>
+
 </body>
 </html>
