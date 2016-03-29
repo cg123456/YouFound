@@ -7,13 +7,13 @@
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cd73b4c03223ddc97b49b9f72b09afc5"></script>
 <title>Success Page</title>
 <style>
-#container {width:1080px; height: 800px; }  
+.container {width:1080px; height: 800px; background: rgba(220,20,60, .2);}  
 </style>
 </head><coordx>113.41069793701172</coordx>
   <coordy>23.04681396484375</coordy>
 <body>
-<div id="container"></div>
-<script type="text/javascript">
+<div class="container"></div>
+<!-- <script type="text/javascript">
 	var map = new AMap.Map('container',{
         zoom: 10,
         center: [113.41069793701172,23.04681396484375]
@@ -22,7 +22,7 @@
         position: [113.41069793701172, 23.04681396484375],
         map:map
     });
-</script>
+</script> -->
 <!-- <div style="text-align:center;">
 <p><img src="images/banner.jpg" style="text-align:center;"></img></p>
 </div> -->
