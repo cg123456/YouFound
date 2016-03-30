@@ -14,28 +14,9 @@
 	
 	<!-- 表单的css -->
 	<link rel="stylesheet" type="text/css" href="css/register.css">
-	
-	<!-- <script type="text/javascript" src="js/jquery.validate.js"></script>
-	<script type="text/javascript" src="js/jquery.metadata.js"></script>
-	<script type="text/javascript" src="js/resgin.js"></script> -->
 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-
-	
-	<script type="text/javascript">
-	
-	$(document).ready(function() {
-		$("#signupForm2").hide();
-		$("#show_email_signup").click(function() {
-			$("#signupForm").hide();
-			$("#signupForm2").show();
-		});
-		$("#show_phone_signup").click(function() {
-			$("#signupForm").show();
-			$("#signupForm2").hide();
-		});
-	});
-	</script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 
@@ -51,68 +32,21 @@
 			<p style="text-align:center;"><a style="font-size:12px">Find you new hone on YouFound</a></p>
 			<div class="form_wrapper">
 				<form id="signupForm" method="post" action="" class="zcform">
-					<p>
-						<button id="show_email_signup" style="float:left; margin-bottom:10px; background-color: transparent; border: 0; cursor:pointer; font-size:16px; color: #555" type="button">&#60; go to email sign up</button>
-					</p>
 					<p class="clearfix">
-							<input
+						<!-- <label class="one" for="telphone">手机号码：</label> --> <input
 							id="telphone" name="telphone" class="required" value
-							placeholder="Phone Number" style="border-radius:8px"/>
+							placeholder="Email / Phone Number" style="border-radius:8px;""/>
 					</p>
 					<p class="clearfix">
-							<input class="identifying_code"
-							type="text" value placeholder="Verification Code" style="border-radius:8px;"/> <input
-							class="get_code" type="button" value="Send" style="border-radius:8px;"/>
-					</p>
-					<p class="clearfix">
-							<input
+						<!-- <label class="one" for="password">登录密码：</label> --> <input
 							id="password" name="password" type="password"
 							class="{required:true,rangelength:[8,20],}" value
 							placeholder="Your Password" style="border-radius:8px;"/>
 					</p>
-					<p class="clearfix agreement">
-						<input type="checkbox" /><b class="left"><a style="color: #666">Read and agreed</a><a href="#">《User Agreement》</a>
-						</b>
-					</p>
 					<p class="clearfix">
-						<input class="submit" type="submit" value="Submit" style="border-radius:8px;"/>
+						<input class="submit" type="submit" value="Login" style="border-radius:8px;"/>
 					</p>
-					<p class="last">
-						<a style="font-size:16px; color: black">Aready a user?</a>
-						<a href="signin.html">Login</a>
-					</p>
-				</form>
-				<form id="signupForm2" method="post" action="" class="zcform">
-					<p>
-						<button id="show_phone_signup" style="float:left; margin-bottom:10px; background-color: transparent; border: 0; cursor:pointer; font-size:16px; color: #555" type="button">&#60; sign up with cellphone</button>
-					</p>
-					<p class="clearfix">
-							<input
-							id="telphone" name="telphone" class="required" value
-							placeholder="Email" style="border-radius:8px;"/>
-					</p>
-					<p class="clearfix">
-							<input
-							id="password" name="password" type="password"
-							class="{required:true,rangelength:[8,20],}" value
-							placeholder="Your Password" style="border-radius:8px"/>
-					</p>
-					<p class="clearfix">
-							<input class="identifying_code"
-							type="text" value placeholder="Verification Code" style="border-radius:8px"/> <input
-							class="get_code" type="button" value="DDH8" style="border-radius:8px;"/>
-					</p>
-					<p class="clearfix agreement">
-						<input type="checkbox" /><b class="left"><a style="color: #666">Read and agreed</a><a href="#">《User Agreement》</a>
-						</b>
-					</p>
-					<p class="clearfix">
-						<input class="submit" type="submit" value="Submit" style="border-radius:8px;"/>
-					</p>
-					<p class="last">
-						<a style="font-size:16px; color: black">Aready a user?</a>
-						<a href="signin.html">Login</a>
-					</p>
+					
 				</form>
 			</div>
 

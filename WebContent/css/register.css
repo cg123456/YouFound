@@ -5,7 +5,7 @@ a{text-decoration:none;cursor:pointer;font-size:2em;}
 img{border:none;}
 html,body{ font-size:8px;font-family:"微软雅黑";overflow-x:hidden;}
 
-.wrapper{width:365px;margin:60px auto;}
+.form_wrapper{width:350px;margin:60px auto;}
 .left{float:left;}
 .right{float:right;}
 .clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
@@ -23,7 +23,7 @@ input:focus{border-color:#FC0;}
 .zcform .submit{/* background:#F93; */background:#666;font-size:15px;letter-spacing:4px;color:#fff;cursor:pointer;border:none;}
 
 #telphone,#password,#confirm_password,.submit,#agent{border:1px solid #ccc;width:100%;height:42px;text-indent:10px;}
-.identifying_code{height:42px;width:68.5%;_line-height:46px;text-indent:10px;}
+.identifying_code{border:1px solid #ccc;height:42px;width:68.5%;_line-height:46px;text-indent:10px;}
 .get_code{height:44px;width:25%;margin-left:5%;border:1px solid #ccc;cursor:pointer;}
 .agreement{height:30px;line-height:30px;font-size:7px;}
 .agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;}
