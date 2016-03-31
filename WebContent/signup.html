@@ -13,13 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="css/signupin.css">
 	
 	<!-- 表单的css -->
-	<link rel="stylesheet" type="text/css" href="css/register.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/register.css"> -->
 	
-	<!-- <script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/jquery.metadata.js"></script>
-	<script type="text/javascript" src="js/resgin.js"></script> -->
+	<script type="text/javascript" src="js/resgin.js"></script>
 
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 
 	
 	<script type="text/javascript">
@@ -51,13 +51,18 @@
 			<p style="text-align:center;"><a style="font-size:12px">Find you new hone on YouFound</a></p>
 			<div class="form_wrapper">
 				<form id="signupForm" method="post" action="" class="zcform">
-					<p>
-						<button id="show_email_signup" style="float:left; margin-bottom:10px; background-color: transparent; border: 0; cursor:pointer; font-size:16px; color: #555" type="button">&#60; go to email sign up</button>
+					<p class="clearfix">
+						<!-- style="float:left; margin-bottom:10px; -->
+						<button id="show_email_signup"  type="button">&#60;---go to email sign up</button>
 					</p>
 					<p class="clearfix">
+						<span>
 							<input
 							id="telphone" name="telphone" class="required" value
 							placeholder="Phone Number" style="border-radius:8px"/>
+						</span>
+						<span>
+						</span>
 					</p>
 					<p class="clearfix">
 							<input class="identifying_code"
@@ -83,12 +88,12 @@
 					</p>
 				</form>
 				<form id="signupForm2" method="post" action="" class="zcform">
-					<p>
-						<button id="show_phone_signup" style="float:left; margin-bottom:10px; background-color: transparent; border: 0; cursor:pointer; font-size:16px; color: #555" type="button">&#60; sign up with cellphone</button>
+					<p class="clearfix">
+						<button id="show_phone_signup" type="button">&#60;---sign up with cellphone</button>
 					</p>
 					<p class="clearfix">
 							<input
-							id="telphone" name="telphone" class="required" value
+							id="email" name="email" class="required" value
 							placeholder="Email" style="border-radius:8px;"/>
 					</p>
 					<p class="clearfix">

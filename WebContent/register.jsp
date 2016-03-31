@@ -9,7 +9,7 @@
 </head>
 <body>
 <div style="text-align:center;">
-	<form action="user.do" method="post">
+	<form action="user.do?method=reg" method="post">
 		&nbsp;用户名：<input type="text" name="username"><br><br>
 		&nbsp;&nbsp;密码：<input type="password" name="password"><br><br>
 		确认密码：<input type="password" name="password2"><br><br>

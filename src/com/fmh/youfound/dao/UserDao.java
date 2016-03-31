@@ -12,7 +12,7 @@ import com.fmh.youfound.entity.User;
  * @date 2016-3-24 上午10:22:43 
  * @version 1.0  
  */
-@Component
+@Component("userDao")
 public class UserDao {
 
 	private HibernateTemplate hibernateTemplate;

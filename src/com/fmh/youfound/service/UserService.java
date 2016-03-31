@@ -13,7 +13,7 @@ import com.fmh.youfound.entity.User;
  * @Verson 创建时间：2015年9月14日上午11:39:31
  * @Comment 
  */
-@Component
+@Component("userService")
 public class UserService {
 	
 	private UserDao userDao;
