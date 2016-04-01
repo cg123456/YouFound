@@ -1,9 +1,6 @@
 package com.fmh.youfound.dao;
 
-import javax.annotation.Resource;
-
-import org.springframework.orm.hibernate4.HibernateTemplate;
-import org.springframework.stereotype.Component;
+import java.util.List;
 
 import com.fmh.youfound.entity.User;
 
@@ -12,22 +9,44 @@ import com.fmh.youfound.entity.User;
  * @date 2016-3-24 上午10:22:43 
  * @version 1.0  
  */
-@Component
-public class UserDao {
+public interface UserDao {
 
-	private HibernateTemplate hibernateTemplate;
+	/**
+	 * 根据id加载user实例对象
+	 */
+	User get(Long id);
 	
-	public void save(User user) {
-		hibernateTemplate.save(user);
-	}
-
-	public HibernateTemplate getHibernateTemplate() {
-		return hibernateTemplate;
-	}
-
-	@Resource  
-	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-		this.hibernateTemplate = hibernateTemplate;
-	}
+	/**
+	 * 持久化user对象
+	 */
+	Integer save(User user);
+	
+	/**
+	 * 删除一个user对象
+	 */
+	void delete(User user);
+	
+	/**
+	 * 修改实例对象
+	 * @param user
+	 */
+	void update(User user);
+	
+	/**
+	 * 加载全部的user对象
+	 */
+	List<User> findAll();
+	
+	/**
+	 * 根据用户名查找User
+	 * @param userName
+	 */
+	User findByUserName(String userName);
+	
+	/**
+	 * 通过Email查找用户
+	 * @param email
+	 */
+	User findByEmail(String email);
 	
 }

@@ -13,7 +13,8 @@
 	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
     http://www.springframework.org/schema/context   
     http://www.springframework.org/schema/context/spring-context-2.5.xsd">
-	<context:component-scan base-package="com.fmh.springmvc"/>   
+	<context:component-scan base-package="com.fmh"/> 
+	<context:component-scan base-package="test.com.fmh"/>   
 	<!-- 支持aop注解 -->
 	<context:annotation-config />
 
@@ -29,30 +30,36 @@
 	<bean id="dataSource" destroy-method="close"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3366/mydb?characterEncoding=UTF-8" />
+		<property name="url" value="jdbc:mysql://localhost:3306/youfound?characterEncoding=UTF-8" />
 		<property name="username" value="root" />
-		<property name="password" value="fmuhai" />
+		<property name="password" value="root" />
 	</bean>
 
 	<!-- <bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> -->
-		<bean id="sessionFactory"
-				class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>
 		<property name="hibernateProperties">
 			<props>
 				<!-- key的名字前面都要加hibernate. -->
-				<prop key="hibernate.dialect">
-					org.hibernate.dialect.MySQL5Dialect
-				</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 		<property name="packagesToScan">
-			<value>com.fmh.springmvc.entity</value>
+			<list>
+			<!-- <value>com.fmh.youfound</value>
+			<value>com.soufang</value> -->
+			<value>com.fmh.youfound.entity</value>
+			</list>
 		</property>
 	</bean>
 
@@ -72,16 +79,20 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<tx:annotation-driven transaction-manager="txManager" />
-	<!-- <aop:config>
-		<aop:pointcut expression="execution(public * com.fmh.springmvc.service.*.*(..))"
+	<!-- 因为将aop:config注释掉了，使用注解的方式运行时报错：
+		Write operations are not allowed in read-only mode (FlushMode.MANUAL): 
+		Turn your Session into FlushMode.COMMIT/AUTO or remove 'readOnly' 
+		marker from transaction definition. -->
+	<aop:config>
+		<aop:pointcut expression="execution(public * com.fmh.youfound.service.*.*(..))"
 			id="businessService" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" />
-	</aop:config> -->
+	</aop:config>
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name="find*" read-only="true" propagation="NOT_SUPPORTED" />
+			<tx:method name="find*" read-only="true" propagation="REQUIRED" />   <!-- NOT_SUPPORTED -->
 			<!-- get开头的方法不需要在事务中运行 。 有些情况是没有必要使用事务的，比如获取数据。开启事务本身对性能是有一定的影响的 -->
-			<tx:method name="*" />    <!-- 其他方法在实务中运行 -->
+			<tx:method name="*" read-only="false"/>    <!-- 其他方法在实务中运行 -->
 		</tx:attributes>
 	</tx:advice> 
 

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class User {
 
-	public Integer id;
+	public Long id;
 	
 	/**
 	 * 注册时需要的信息
@@ -23,6 +23,8 @@ public class User {
 	private String passwprd;
 	private String phoneNumber;
 	private String email;
+	
+	public User(){}
 	
 	
 	public User(String userName, String passwprd, String email) {
@@ -48,10 +50,10 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUserName() {

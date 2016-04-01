@@ -21,10 +21,11 @@ public class PublishLeaseHouse {
 	private String purpose;			//用途：住宅，别墅，写字楼，商铺等
 	private String leaseType;		//出租类型，整租，月租，合租，短租等
 	private String housingEstate;	//小区
-	private Address address;		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
+	//@OneToOne
+	//private Address address;		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
 									//哪个城市，哪个区/商圈,哪个小区
 	
-	private HouseType houseType;	//户型
+	//private HouseType houseType;	//户型
 	private String buildArea;		//建筑面积
 	private String fitment;			//装修类型：豪华装修，精装修，中等装修，简装修，毛坯房
 	
@@ -71,7 +72,7 @@ public class PublishLeaseHouse {
 	public void setHousingEstate(String housingEstate) {
 		this.housingEstate = housingEstate;
 	}
-	public Address getAddress() {
+	/*public Address getAddress() {
 		return address;
 	}
 	public void setAddress(Address address) {
@@ -82,7 +83,7 @@ public class PublishLeaseHouse {
 	}
 	public void setHouseType(HouseType houseType) {
 		this.houseType = houseType;
-	}
+	}*/
 	public String getBuildArea() {
 		return buildArea;
 	}

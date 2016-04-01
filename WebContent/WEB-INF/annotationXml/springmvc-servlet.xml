@@ -34,11 +34,11 @@
 	
 	<mvc:interceptors> 
 		<!-- 拦截所有springmvc的url！ -->
-		<bean class="com.fmh.springmvc.interceptor.MyInterceptor"></bean>
+		<bean class="com.fmh.youfound.interceptor.MyInterceptor"></bean>
 		<mvc:interceptor>
 			<mvc:mapping path="/user.do" />
 			<!--<mvc:mapping path="/test/*" /> -->
-			<bean class="com.fmh.springmvc.interceptor.MyInterceptor2"></bean>
+			<bean class="com.fmh.youfound.interceptor.MyInterceptor2"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
          

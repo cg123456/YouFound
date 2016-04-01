@@ -1,0 +1,89 @@
+
+
+/*sign up css*/
+
+.signupNav, .signinNav {
+	width: 100%;
+    height: 100px;
+    /* background: rgba(220,20,60, .2); */
+    /* background: rgba(105,105,0, .2); */
+    
+    font-size: 2em;
+}
+
+.signupNav #label a {
+	position: absolute;
+    top: 48px;
+    left: 56px;
+    font-size: 20px;
+    /* color: #111; */
+    /* background: rgba(0,0,0, .2); */
+    text-decoration:none;
+}
+
+.signup {
+	width: 100%;
+    height: 500px;
+    /* background: rgba(220,20,60, .2); */
+    /* background: rgba(105,10,0, .2); */
+    font-size: 2em;
+}
+.signup #logo {
+	width: 100%;
+	height: 80px;
+	text-align:center;
+	vertical-align:middle;
+	/* background: rgba(0,0,0, .2); */
+}
+
+img .logo {
+	width: 224px;
+	height: 75px;
+	text-align:center;
+	vertical-align:middle;
+	/* background: rgba(0,0,0, .2); */
+}
+
+
+
+/*表单部分*/
+@charset "utf-8";
+*{margin:0;padding:0;outline:none;}
+a{text-decoration:none;cursor:pointer;font-size:2em;}
+/* li{list-style:none;} */
+img{border:none;}
+html,body{ font-size:8px;font-family:"微软雅黑";overflow-x:hidden;}
+
+.form_wrapper{width:650px;margin:60px auto;}
+.left{float:left;}
+.right{float:right;}
+.clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
+.clearfix{zoom:1;}
+input:focus{border-color:#FC0;}
+/* zcform */
+.zcform{/* margin:40px 0 0 340px; */margin-top:40px; text-align:center;vertical-align:middle;}
+.zcform p{margin-bottom:10px;}
+.zcform a{ color:#ff7702;}
+.zcform p.last{font-size:10px;}
+.zcform p.last input{cursor:pointer;}
+.zcform label{display:block;float:left;height:48px;line-height:48px;color:#F00;text-indent:10px;}
+.zcform label.one{width:90px;height:48px;text-align:right;color:#000;}
+.zcform input{float:left;font-size:14px;font-family:"微软雅黑";color:#666;}
+.zcform button{float:left; margin-left:22%; background-color: transparent; border: 0; cursor:pointer; font-size:16px; font-family:"微软雅黑";color:blue;}
+.zcform .submit{/* background:#F93; */background:#666;font-size:15px;letter-spacing:4px;color:#fff;cursor:pointer;border:none;}
+
+#telphone,#email,#password,#confirm_password,.submit,#agent{margin-left:22%;border:1px solid #ccc;width:55%;height:42px;text-indent:10px;}
+.identifying_code{margin-left:22%;border:1px solid #ccc;height:42px;width:38%;_line-height:46px;text-indent:10px;}
+.get_code{height:44px;width:15%;margin-left:2%;border:1px solid #ccc;cursor:pointer;}
+.agreement{margin-left:22%;height:30px;line-height:30px;font-size:7px;}
+.agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;}
+/*
+本代码由素材家园收集并编辑整理;
+尊重他人劳动成果;
+转载请保留素材家园链接 - www.sucaijiayuan.com
+*/
+
+
+
+
+
