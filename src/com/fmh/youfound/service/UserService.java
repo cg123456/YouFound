@@ -23,11 +23,15 @@ public class UserService {
 		userDao.save(user);
 	}
 	
+	public User getUser() {
+		return userDao.get((long) 10);
+	}
+	
 
 	public UserDao getUserDao() {
 		return userDao;
 	}
-	@Resource
+	@Resource(name="userDaoHTImpl")
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}

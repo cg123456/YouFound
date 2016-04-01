@@ -5,6 +5,7 @@
 */
 /*-------注册验证-----------*/
 $().ready(function() {
+
 	 $("#signupForm").validate({
 		rules: {
 			telphone:{
@@ -38,7 +39,7 @@ $().ready(function() {
 			}
 		}
 	});
-	 
+
 	 $("#signupForm2").validate({
 			rules: {
 				email:{

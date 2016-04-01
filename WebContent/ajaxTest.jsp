@@ -24,13 +24,52 @@
     }  
 
     function reset() {
-        $("#result").html("") ;
+        $("#user_vaildate").html("") ;
     }
+
+
+
+    function ajaxVaildateUser() {
+        var vaildate = true;
+        $("label").each(function() {
+            var labelval = $(this).html();
+            /*alert("labelval="+labelval);*/
+            if($.trim(labelval) == $.trim("请输入手机号")||$.trim(labelval) == $.trim("手机号有误")){
+                vaildate = false;
+                return false;
+                /*return false;——跳出所有循环；相当于 javascript 中的 break 效果。
+                return true;——跳出当前循环，进入下一个循环；相当于 javascript 中的 continue 效果*/
+
+            }
+        });
+
+        if(vaildate) {
+            $.ajax({
+                data:"username="+$("#username").val(),
+                type:"GET",
+                dataType:'json',
+                url:"user/vaildateUser.do",
+                error:function(data) {
+
+                },
+                success: function(data) {
+                    $("#user_vaildate").html(data.msg); 
+                }
+            });
+        }
+
+    }
+
+
 </script>  
 </head>  
 <body>  
-    <input type="text" name="name" id="name" onblur="ajaxTest()" onfocus="reset()"/>  
+    <input type="text" name="username" id="username" onblur="ajaxVaildateUser()" onfocus="reset()"/>  
+    <label id="user_vaildate" ></label>
+    
+    <label for="password" generated="true" class="error">aa</label>
+    <label for="telphone" generated="true" class="error">qq</label>
     <!-- <input type="submit" value="登录" onclick="ajaxTest();"/>   -->
-    <div id="result"></div>  
+    <!-- <div id="result"></div> -->  
 </body>  
 </html>  

@@ -35,6 +35,71 @@
 			$("#signupForm2").hide();
 		});
 	});
+
+	function ajaxVaildateUser() {
+        var vaildate = true;
+        $("label").each(function() {
+            var labelval = $(this).html();
+            /*alert("labelval="+labelval);*/
+            if($.trim(labelval) == $.trim("请输入手机号") && $(".error").css("display")=='block' ||
+            	$.trim(labelval) == $.trim("手机号有误") &&  $(".error").css("display")=='block' ||
+            	$.trim(labelval) == $.trim("请输入邮箱") &&  $(".error").css("display")=='block'||
+            	$.trim(labelval) == $.trim("邮箱有误") && $(".error").css("display")=='block'){
+                vaildate = false;
+                return false;
+                /*return false;——跳出所有循环；相当于 javascript 中的 break 效果。
+                return true;——跳出当前循环，进入下一个循环；相当于 javascript 中的 continue 效果*/
+
+            }
+        });
+
+        if(vaildate) {
+        	if($("#signupForm2").is(":hidden")) {	//验手机号
+        		$.ajax({
+                	data:"telphone="+$("#telphone").val(),
+                	type:"GET",
+                	dataType:'json',
+                	url:"user/vaildatePhone.do",
+                	error:function(data) {
+
+                	},
+                	success: function(data) {
+                		if($.trim(data.msg)==$.trim("手机号已被注册"))
+                			$("#phone_vaildate").html(data.msg).css("color","red");
+                		else
+                   	 		$("#phone_vaildate").html(data.msg).css("color","green"); 
+                	}
+            	});
+
+        	} else {	//验邮箱
+        		$.ajax({
+                	data:"email="+$("#email").val(),
+                	type:"GET",
+                	dataType:'json',
+                	url:"user/vaildateEmail.do",
+                	error:function(data) {
+
+                	},
+                	success: function(data) {
+                		if($.trim(data.msg)==$.trim("手机号已被注册"))
+                			$("#email_vaildate").html(data.msg).css("color","red");
+                		else
+                   	 		$("#email_vaildate").html(data.msg).css("color","green"); 
+                	}
+            	});
+        	}
+            
+        }
+
+    }
+
+    function resetVaildateUser() {
+    	if($("#signupForm2").is(":hidden"))	//手机号
+    		$("#phone_vaildate").html(""); 
+    	else
+    		$("#email_vaildate").html(""); 
+    }
+
 	</script>
 </head>
 <body>
@@ -56,13 +121,12 @@
 						<button id="show_email_signup"  type="button">&#60;---go to email sign up</button>
 					</p>
 					<p class="clearfix">
-						<span>
 							<input
 							id="telphone" name="telphone" class="required" value
-							placeholder="Phone Number" style="border-radius:8px"/>
-						</span>
-						<span>
-						</span>
+							placeholder="Phone Number" style="border-radius:5px"
+							onblur="ajaxVaildateUser()" onfocus="resetVaildateUser()"/>
+						<label id="phone_vaildate">
+						</label>
 					</p>
 					<p class="clearfix">
 							<input class="identifying_code"
@@ -94,7 +158,10 @@
 					<p class="clearfix">
 							<input
 							id="email" name="email" class="required" value
-							placeholder="Email" style="border-radius:8px;"/>
+							placeholder="Email" style="border-radius:8px;"
+							onblur="ajaxVaildateUser()" onfocus="resetVaildateUser()"/>
+							<label id="email_vaildate">
+							</label>
 					</p>
 					<p class="clearfix">
 							<input
