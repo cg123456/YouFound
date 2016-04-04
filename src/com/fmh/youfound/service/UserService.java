@@ -3,6 +3,8 @@ package com.fmh.youfound.service;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fmh.youfound.dao.UserDao;
 import com.fmh.youfound.entity.User;
@@ -13,27 +15,22 @@ import com.fmh.youfound.entity.User;
  * @Verson 创建时间：2015年9月14日上午11:39:31
  * @Comment 
  */
-@Component("userService")
-public class UserService {
-	
-	private UserDao userDao;
-	
-	public void addUser(User user){
-		
-		userDao.save(user);
-	}
-	
-	public User getUser() {
-		return userDao.get((long) 10);
-	}
-	
+public interface UserService {
 
-	public UserDao getUserDao() {
-		return userDao;
-	}
-	@Resource(name="userDaoHTImpl")
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
+	void addUser(User user);
+
+	/**
+	 * 判断是否存在该手机号
+	 * @return
+	 */
+	boolean exsitPhone(String phoneNumber);
+
+	/**
+	 * 判断是否存在邮箱
+	 * @param email
+	 * @return
+	 */
+	boolean exsitEmail(String email);
+
 
 }

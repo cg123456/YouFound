@@ -3,6 +3,7 @@ package com.fmh.youfound.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @Verson 创建时间：2015年9月18日上午11:22:37
  * @Comment 
  */
+@Component
 public class MyInterceptor implements HandlerInterceptor{
 
 

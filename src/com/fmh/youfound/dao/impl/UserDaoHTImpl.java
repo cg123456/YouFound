@@ -1,11 +1,14 @@
 package com.fmh.youfound.dao.impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import com.fmh.youfound.dao.UserDao;
 import com.fmh.youfound.entity.User;
@@ -16,11 +19,11 @@ import com.fmh.youfound.entity.User;
  * @date 2016-4-1 下午3:31:35 
  * @version 1.0  
  */
-@Component("userDaoHTImpl")
+//@Component("userDaoHTImpl")
+@Controller("userDaoHTImpl")
 public class UserDaoHTImpl implements UserDao {
 	
-	private HibernateTemplate hibernateTemplate;
-	
+	private HibernateTemplate hibernateTemplate;	
 
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
@@ -44,8 +47,6 @@ public class UserDaoHTImpl implements UserDao {
 	 */
 	@Override
 	public Integer save(User user) {
-		System.out.println("调用UserDaoHTImpl的save()方法");
-		System.out.println("user:"+user.getUserName());
 		this.getHibernateTemplate().save(user);
 		//hibernateTemplate.save(user);
 		return 0;
@@ -71,10 +72,10 @@ public class UserDaoHTImpl implements UserDao {
 	/**
 	 * 加载全部的user对象
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findAll() {
-		List<User> list = (List<User>) hibernateTemplate.find("from User");
-		return list;
+		return (List<User>) hibernateTemplate.find("from User");
 	}
 	
 	/**
@@ -83,7 +84,13 @@ public class UserDaoHTImpl implements UserDao {
 	 */
 	@Override
 	public User findByUserName(String userName) {
-		return (User) hibernateTemplate.find("from User as u where u.userName=?", userName);
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) hibernateTemplate
+				.find("from User as u where u.userName=?", userName);
+		if(list.isEmpty())
+			return null;
+		return list.get(0);
+
 	}
 	
 	/**
@@ -92,7 +99,26 @@ public class UserDaoHTImpl implements UserDao {
 	 */
 	@Override
 	public User findByEmail(String email) {
-		return (User) hibernateTemplate.find("from User ad u where u.email=?", email);
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) hibernateTemplate
+				.find("from User as u where u.email=?", email);
+		if(list.isEmpty())
+			return null;
+		return list.get(0);	
+	}
+	
+	/**
+	 * 通过PhoneNumber查找用户
+	 * @param email
+	 */
+	@Override
+	public User findByPhone(String phoneNumber) {
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) hibernateTemplate
+				.find("from User as u where u.phoneNumber=?", phoneNumber);
+		if(list.isEmpty())
+			return null;
+		return list.get(0);
 			
 	}
 	

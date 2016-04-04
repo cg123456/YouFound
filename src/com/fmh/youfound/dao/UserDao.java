@@ -48,5 +48,11 @@ public interface UserDao {
 	 * @param email
 	 */
 	User findByEmail(String email);
+
+	/**
+	 * 通过phoneNumber查找用户
+	 * @param email
+	 */
+	User findByPhone(String phoneNumber);
 	
 }
