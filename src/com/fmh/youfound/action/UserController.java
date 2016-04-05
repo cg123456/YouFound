@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fmh.youfound.entity.User;
 import com.fmh.youfound.service.UserService;
+import com.fmh.youfound.utils.EmailUtil;
 
 /** 
  * @author fengmuhai
@@ -22,7 +24,7 @@ import com.fmh.youfound.service.UserService;
  * @version 1.0  
  */
 //@Component
-@org.springframework.stereotype.Controller
+@Controller
 @RequestMapping("/user/*")
 public class UserController {
 	
@@ -42,14 +44,22 @@ public class UserController {
 	/*@RequestMapping(params="method=reg")*/
 	@RequestMapping(value="register.do")
 	public String register(HttpServletRequest req) {
-		System.out.println("Hello User Controller.Requeset()!");
+		System.out.println("invoke method register()");
 		//req.setAttribute("user", req.getParameter("username"));
-
-		String username = req.getParameter("username");
-		String password = req.getParameter("password");
-		String email = req.getParameter("email");
 		
-		userService.addUser(new User(username, password, email));
+		if(req.getParameter("email")!=null){	//邮箱注册
+			String email = req.getParameter("email");
+			String password = req.getParameter("password");
+			String username = email;
+			userService.addUser(new User(username, password, "", email));
+			
+		} else {	//手机注册
+			String phoneNumber = req.getParameter("phoneNumber");
+			String password = req.getParameter("password");
+			String username = phoneNumber;
+			userService.addUser(new User(username, password, phoneNumber, ""));
+		}
+		
 		System.out.println("新增用户成功！");
 		return "../success";
 	}
@@ -80,7 +90,7 @@ public class UserController {
         //System.out.println(request.getParameter("email"));
 		String email = request.getParameter("email");
         Map<String,Object> map = new HashMap<String,Object>();  
-        if(email==null || email.equals("")) 
+        if(email==null || email.equals(""))
         	map.put("msg", "");
         else if(userService.exsitEmail(email)) 
         	map.put("msg", "邮箱已被注册");
@@ -104,6 +114,40 @@ public class UserController {
         }  
         return map;  
     } 
+	
+	@RequestMapping(value="checkVerifyCode.do")
+	public @ResponseBody Map<String,Object> vaildateCode(HttpServletRequest request) throws IOException{  
+        //System.out.println(request.getParameter("email"));
+		
+		String email = request.getParameter("email");
+		String verify_code = request.getParameter("verify_code");
+        Map<String,Object> map = new HashMap<String,Object>();  
+        if(verify_code==null || verify_code.equals("")) {
+        	map.put("msg", "nomatch");
+        } else if(EmailUtil.verifyCodeRecord.get(email).split("|")[0].equals(verify_code)) {
+        	map.put("msg", "match");
+        } else {
+        	map.put("msg", "nomatch");
+        }
+        	
+        return map;  
+    }  
+	
+	@RequestMapping(value="sendEmail.do")
+	public @ResponseBody Map<String,Object> sendEmail(HttpServletRequest request) throws IOException{  
+        //System.out.println(request.getParameter("email"));
+		
+		String email = request.getParameter("email");
+        Map<String,Object> map = new HashMap<String,Object>();  
+        if(EmailUtil.send(email, "欢迎注册新用户", "123456")) {
+        	map.put("msg", "success");
+        } else {
+        	map.put("msg", "fail");
+        }
+        	
+        return map;  
+    }  
+	
 	
 
 }

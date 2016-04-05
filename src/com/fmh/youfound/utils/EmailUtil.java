@@ -1,5 +1,7 @@
 package com.fmh.youfound.utils;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.commons.mail.SimpleEmail;
 
 /** 
@@ -9,12 +11,14 @@ import org.apache.commons.mail.SimpleEmail;
  */
 public class EmailUtil {
 	
+	public static ConcurrentHashMap<String, String> verifyCodeRecord = new ConcurrentHashMap<String, String>();
+	
 	public static void main(String[] args) {
 		
 		System.out.println(send("1007682823@qq.com","欢迎注册新用户，点击链接完成激活账户...","请点击以下链接完成激活：http://localhost:8080/YouFound/index.html \n激活账号，24小时生效，否则重新验证，请尽快激活!"));
 	}
 	
-	public static String send(String toAddr, String subject, String content){  
+	public static boolean send(String toAddr, String subject, String content){  
         String result = null;  
         SimpleEmail email = new SimpleEmail();  
         //设置主机名称  
@@ -33,14 +37,17 @@ public class EmailUtil {
             //设置邮件内容  
             email.setMsg(content);  
             //发送邮件  
-            email.send();  
-            result = "successful";  
+            email.send();
+            
+            //记录邮件信息
+            verifyCodeRecord.put(toAddr, content+'|'+System.currentTimeMillis());
+            
+            return true;  
         } catch (Exception e) {  
-            e.printStackTrace();  
-            result = "not successful";  
+            e.printStackTrace(); 
         }  
-          
-        return result;  
+           
+        return false;
     }  
 	
 }

@@ -51,7 +51,7 @@ public class TestController implements Controller {
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		
-		userService.addUser(new User(username, password, email));
+		userService.addUser(new User(username, password, email,""));
 		System.out.println("新增用户成功！");
 		return new ModelAndView("success");
 	}
@@ -66,7 +66,7 @@ public class TestController implements Controller {
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		
-		userService.addUser(new User(username, password, email));
+		userService.addUser(new User(username, password, email,""));
 		System.out.println("新增用户成功！");
 		
 		/*if(email.equals(userService.getUser().getEmail())) {

@@ -31,8 +31,8 @@
 			$("#signupForm2").show();
 		});
 		$("#show_phone_signup").click(function() {
-			$("#signupForm").show();
 			$("#signupForm2").hide();
+			$("#signupForm").show();
 		});
 	});
 	
@@ -40,8 +40,8 @@
 		var vaildate = true;
 		$("label").each(function() {
             var labelval = $(this).html();
-            if($.trim(labelval) == $.trim("请输入手机号") && $(".error").css("display")=='block' ||
-            	$.trim(labelval) == $.trim("手机号有误") &&  $(".error").css("display")=='block'){
+            if($.trim(labelval) == $.trim("请输入手机号") && $(".error").eq(0).css("display")=='block' ||
+            	$.trim(labelval) == $.trim("手机号有误") && $(".error").eq(0).css("display")=='block'){
             	alert("labelval="+labelval);
                 vaildate = false;
                 return false;
@@ -72,12 +72,14 @@
 	
 	function ajaxVaildateEmail() {
 		var vaildate = true;
-		alert("labelval="+labelval);
+		var obj=$("#signupForm2"); 
+		alert("labelval="+$('label[for='+obj.attr('signupForm2')+']').html());
 		$("label").each(function() {
             var labelval = $(this).html();
-            if($.trim(labelval) == $.trim("请输入邮箱") &&  $(".error").css("display")=='block'||
-            	$.trim(labelval) == $.trim("邮箱有误") && $(".error").css("display")=='block'){
+            if($.trim(labelval) == $.trim("请输入邮箱") && $(".error").eq(1).css("display")=='block'||
+            	$.trim(labelval) == $.trim("邮箱有误") && $(".error").eq(1).css("display")=='block'){
             	alert("labelval="+labelval);
+            	alert("display="+$(".error").eq(2).css("display")=='block');
                 vaildate = false;
                 return false;
                 /*return false;——跳出所有循环；相当于 java 中的 break 效果。
@@ -229,7 +231,7 @@
 							<input
 							id="email" name="email" class="required" value
 							placeholder="Email" style="border-radius:8px;"
-							onblur="ajaxVaildatePhone()" onfocus="resetVaildateUser()"/>
+							onblur="ajaxVaildateEmail()" onfocus="resetVaildateUser()"/>
 							<label id="email_vaildate"> 
 							</label>
 					</p>

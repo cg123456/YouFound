@@ -27,11 +27,12 @@ public class User {
 	public User(){}
 	
 	
-	public User(String userName, String passwprd, String email) {
+	public User(String userName, String passwprd, String email, String phoneNumber) {
 		super();
 		this.userName = userName;
 		this.passwprd = passwprd;
 		this.email = email;
+		this.phoneNumber = phoneNumber;
 	}
 	/**
 	 * 基本资料

@@ -64,7 +64,7 @@ public class UserDaoHTImplTest {
 
 	@Test
 	public void testSave() {
-		User u = new User("fengmmmmmm", "123456789", "00000000000000");
+		User u = new User("fengmmmmmm", "123456789", "00000000000000","");
 		//UserDaoHTImpl userDaoHTImpl = new UserDaoHTImpl();
 		System.out.println(ud.getClass().getName());
 		ud.save(u);
