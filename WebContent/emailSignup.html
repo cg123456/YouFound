@@ -30,7 +30,7 @@
 		var labelval;
 		$("label").each(function() {
             var labelval = $(this).html();
-            if($("#email").val() == $.trim("")||$("#email").val() == $.trim(previousVal) ||
+            if($("#email").val() == $.trim("")||
                	$.trim(labelval) == $.trim("请输入邮箱")&&$(".error").css("display")=='block'||
                	$.trim(labelval) == $.trim("邮箱有误")&&$(".error").css("display")=='block') {
             	/*alert("labelval="+labelval);*/
@@ -41,6 +41,9 @@
                 /*return false;——跳出所有循环；相当于 java 中的 break 效果。
                 return true;——跳出当前循环，进入下一个循环；相当于 javascript 中的 continue 效果*/
 
+            } else if($("#email").val() == $.trim(previousVal)) {
+            	vaildate = false;
+                return false;
             }
         });
 		
@@ -55,11 +58,15 @@
             	},
             	success: function(data) {
             		if($.trim(data.msg)==$.trim("邮箱已被注册")) {
-            			$("#email_vaildate").html(data.msg).css("color","red");
+            			$("label[for='email']").html(data.msg).css("color","red");
+            			$("label[for='email']").css("display","block");
+            			/* $("#email_vaildate").html(data.msg).css("color","red"); */
             			$("#getCode").attr("disabled",true);
             			$("#getCode").css("background","#888");
             		} else {
-            			$("#email_vaildate").html(data.msg).css("color","green");
+            			$("label[for='email']").html(data.msg).css("color","green");
+            			$("label[for='email']").css("display","block");
+            			/* $("#email_vaildate").html(data.msg).css("color","green"); */
             			$("#getCode").removeAttr("disabled");
             			$("#getCode").css("background","rgb(49,215,134)");
             		}
@@ -68,10 +75,16 @@
         	});
 		}
 		previousVal = $("#email").val();
+		$("label[for='email']").css("display","block");
 	}
 
     function resetVaildateEmail() {
-    	$("#email_vaildate").html(""); 
+    	/* if($("#email").val() != $.trim(previousVal) || $("#email").val() == $.trim(""))
+    		$("#email_vaildate").html("");  */
+    		
+    		/* if($("#email").val() != $.trim(previousVal) || $("#email").val() == $.trim("")) */
+    		alert("光标落到输入框中的时候触发！！");
+    			$("label[for='email']").css("display","block");
     }
     
 	var sent = false;
@@ -176,8 +189,9 @@
 							<input
 							id="email" name="email" class="required" value
 							placeholder="Email" style="border-radius:5px;"
-							onblur="ajaxVaildateEmail()" onfocus="resetVaildateEmail()"/>
-							<label id="email_vaildate" name="email_vaildate"> 
+							onblur="ajaxVaildateEmail()" /><!-- onfocus="resetVaildateEmail()" -->
+							<label for="email" generated="true" class="error" ></label><!-- style="display: none;" -->
+							<!-- <label id="email_vaildate" name="email_vaildate"> --> 
 							</label>
 					</p>
 					<p class="clearfix">
