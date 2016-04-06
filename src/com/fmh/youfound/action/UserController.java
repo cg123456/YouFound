@@ -119,12 +119,14 @@ public class UserController {
 	public @ResponseBody Map<String,Object> vaildateCode(HttpServletRequest request) throws IOException{  
         //System.out.println(request.getParameter("email"));
 		
-		String email = request.getParameter("email");
-		String verify_code = request.getParameter("verify_code");
+		String[] params = request.getParameter("email_verifyCode").split("\\|");
+		String email = params[0];
+		String verify_code = params[1];
+		System.out.println("email:"+email+"\nverify_code:"+verify_code);
         Map<String,Object> map = new HashMap<String,Object>();  
         if(verify_code==null || verify_code.equals("")) {
         	map.put("msg", "nomatch");
-        } else if(EmailUtil.verifyCodeRecord.get(email).split("|")[0].equals(verify_code)) {
+        } else if(EmailUtil.verifyCodeRecord.get(email).split("\\|")[0].equals(verify_code)) {
         	map.put("msg", "match");
         } else {
         	map.put("msg", "nomatch");

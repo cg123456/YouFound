@@ -23,13 +23,19 @@
 
 	
 	<script type="text/javascript">
+	
+	var previousVal = "";
 	function ajaxVaildateEmail() {
 		var vaildate = true;
+		var labelval;
 		$("label").each(function() {
             var labelval = $(this).html();
-            if($.trim(labelval) == $.trim("请输入邮箱") && $(".error").css("display")=='block'||
-            	$.trim(labelval) == $.trim("邮箱有误") && $(".error").css("display")=='block'){
+            if($("#email").val() == $.trim("")||$("#email").val() == $.trim(previousVal) ||
+               	$.trim(labelval) == $.trim("请输入邮箱")&&$(".error").css("display")=='block'||
+               	$.trim(labelval) == $.trim("邮箱有误")&&$(".error").css("display")=='block') {
             	/*alert("labelval="+labelval);*/
+            	$("#getCode").attr("disabled",true);
+            	$("#getCode").css("background","#888");
                 vaildate = false;
                 return false;
                 /*return false;——跳出所有循环；相当于 java 中的 break 效果。
@@ -48,22 +54,33 @@
             		alert("返回数据失败！");
             	},
             	success: function(data) {
-            		if($.trim(data.msg)==$.trim("邮箱已被注册"))
+            		if($.trim(data.msg)==$.trim("邮箱已被注册")) {
             			$("#email_vaildate").html(data.msg).css("color","red");
-            		else
-               	 		$("#email_vaildate").html(data.msg).css("color","green"); 
+            			$("#getCode").attr("disabled",true);
+            			$("#getCode").css("background","#888");
+            		} else {
+            			$("#email_vaildate").html(data.msg).css("color","green");
+            			$("#getCode").removeAttr("disabled");
+            			$("#getCode").css("background","rgb(49,215,134)");
+            		}
+               	 		 
             	}
         	});
 		}
+		previousVal = $("#email").val();
 	}
 
     function resetVaildateEmail() {
     	$("#email_vaildate").html(""); 
     }
     
+	var sent = false;
     function checkVerifyCode(form) {
+    	if($("#verify_code").val() == $.trim("") || !sent) {
+    		return false;
+    	}
     	$.ajax({
-            	data:"verify_code="+$("#verify_code").val(),
+            	data:"email_verifyCode="+$("#email").val()+"|"+$("#verify_code").val(),
             	type:"GET",
             	dataType:'json',
             	url:"user/checkVerifyCode.do",
@@ -87,12 +104,14 @@
     	if (countdown == 0) { 
         	obj.removeAttribute("disabled");    
         	obj.value="Send";
+        	$("#code_vaildate").html("");
+        	$("#getCode").css("background","rgb(49,215,134)");
         	/*sendEmail();  */
         	countdown = 60; 
         	return;
     	} else { 
         	obj.setAttribute("disabled", true); 
-        	obj.value="ReSend(" + countdown + ")"; 
+        	obj.value="Retry(" + countdown + ")"; 
         	countdown--; 
     	} 
 		setTimeout(function() { 
@@ -111,14 +130,27 @@
             	},
             	success: function(data) {
             		if(data.msg=="success") {
+    					var sent = true;
             			$("#code_vaildate").html("发送成功").css("color","green");
+            			$("#getCode").css("background","#ccc");
             		} else {
-            			$("#code_vaildate").html("发送失败").css("color","green");
+            			$("#code_vaildate").html("发送失败").css("color","red");
             		}
             	}
         	});
     	setSendEmailTime(obj);
     }
+    
+    
+    function vaildSubmit() {
+    	/* if($("#password").attr("disabled")==true) {
+    		$("#submit").css("background","rgb(49,215,134)");
+    	} else {
+    		$("#submit").css("background","#888");
+    	} */
+    	$("#submit").css("background","rgb(49,215,134)");
+    }
+    
 
 	</script>
 </head>
@@ -149,23 +181,24 @@
 							</label>
 					</p>
 					<p class="clearfix">
+							<input id="verify_code" name="verify_code" class="identifying_code"
+							type="text" value placeholder="Verification Code" style="border-radius:5px" onblur="checkVerifyCode(this)"/> 
+							<input id="getCode" class="get_code" type="button" disabled="true" onclick="sendEmail(this)" 
+							 value="Send" style="background:#888; font-size:16px; color:#FFF; border-radius:5px;" />
+							<label id="code_vaildate"></label>
+					</p>
+					<p class="clearfix">
 							<input
 							id="password" name="password" type="password"
 							class="{required:true,rangelength:[8,20],}" value
-							placeholder="Your Password" style="border-radius:8px"/>
-					</p>
-					<p class="clearfix">
-							<input id="verify_code" name="verify_code" class="identifying_code"
-							type="text" value placeholder="Verification Code" style="border-radius:5px"/> 
-							<input class="get_code" type="button" onclick="sendEmail(this)" value="Send" style="border-radius:5px;"/>
-							<label id="code_vaildate"></label>
+							placeholder="Your Password" style="border-radius:5px" onblur="vaildSubmit()"/>
 					</p>
 					<p class="clearfix agreement">
 						<input type="checkbox" /><b class="left"><a style="color: #666">Read and agreed</a><a href="#">《User Agreement》</a>
 						</b>
 					</p>
 					<p class="clearfix">
-						<input class="submit" type="submit" value="Submit" style="border-radius:5px;"/>
+						<input id="submit" class="submit" type="submit" value="Submit" style="background:#888; border-radius:5px;"/>
 					</p>
 					<p class="last">
 						<a style="font-size:16px; color: black">Aready a user?</a>

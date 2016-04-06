@@ -41,6 +41,7 @@ public class EmailUtil {
             
             //记录邮件信息
             verifyCodeRecord.put(toAddr, content+'|'+System.currentTimeMillis());
+            System.out.println("verifyCodeRecord:"+verifyCodeRecord.get(toAddr));
             
             return true;  
         } catch (Exception e) {  

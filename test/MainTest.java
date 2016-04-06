@@ -8,8 +8,10 @@ public class MainTest {
 	public static void main(String[] args) {
 
 		String s = null;
-		if(s.equals("") || s==null) {
+		/*if(s.equals("") || s==null) {
 			System.out.println("s is null!");
-		}
+		}*/
+		
+		System.out.println("123456|1459907908536".split("\\|")[0]);
 	}
 }
