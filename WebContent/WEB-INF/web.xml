@@ -42,4 +42,15 @@
         <url-pattern>*.do</url-pattern>
         <!-- <url-pattern>/</url-pattern> -->
     </servlet-mapping>
+
+	<servlet>
+		<servlet-name>startCaptchaServlet</servlet-name>
+		<servlet-class>com.geetest.sdk.java.web.demo.StartCaptchaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>startCaptchaServlet</servlet-name>
+		<url-pattern>/validate</url-pattern>
+	</servlet-mapping>
+    
+    
 </web-app>

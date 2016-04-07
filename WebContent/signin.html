@@ -7,44 +7,73 @@
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-	
+	<!-- 异步加载 -->
+	<script src="http://api.geetest.com/get.php"></script>
 	<link rel="stylesheet" type="text/css" href="css/signupin.css">
-	
-	<!-- 表单的css -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/register.css"> -->
+	<script>
+	alert("成功回调0");
+	/* var config = new Object(); */
+	/* config.gt = "cbf585f5997c91060c53d2207092c360";
+	config.challenge = "";
+	config.product = "embed";
+	config.lang = "zh-cn";
+	config.sandbox = true;
+	config.width = ""; */
+	alert("成功回调1");
+    var captchaObj = new Geetest(config); // 实例化，config为配置参数
+	alert("成功回调2");
+    captchaObj.appendTo("#vaildate"); // 绑定到id为captcha的元素上
+	alert("成功回调3");
+    captchaObj.onSuccess(function () {
+    alert("成功回调");
+        // 成功回调
+    });
 
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+    captchaObj.getValidate(); // 获取成功后的验证信息，失败是返回false
+    /* // 当geetest库加载好后回调initCaptcha
+    // 注意initCaptcha必须在全局作用域下定义
+    var initCaptcha = function () {
+
+        var captchaOjb = new Geetest(config);
+
+        captchaObj.appendTo("#vaildate");
+
+        captchaObj.onSuccess(function () {
+            // 成功回调
+        });
+
+        captchaObj.getValidate(); // 获取成功后的验证信息，失败是返回false
+    }; */
+    
+
+</script>
+	
 </head>
 <body>
-
-	<section class="hero">
-	
+	<section class="signupin">
+		
 		<div class="signupNav">
 			<div id="label"><a href="index.html" >&#60; Back to HomePage</a></div>
 		</div>
 		<div class="signup">
+			<div id="vaildate" style="width:300px; height:150px; background:red">asasas</div>
 			<div id="logo">
 				<img class="logo" src="img/1.0logo_vqfr2u.png"></img>
 			</div>
 			<p style="text-align:center;"><a style="font-size:12px">Find you new hone on YouFound</a></p>
 			<div class="form_wrapper">
-				<form id="signupForm" method="post" action="" class="zcform">
+				<form id="signinForm" method="post" action="" class="zcform">
 					<p class="clearfix">
-						<!-- <label class="one" for="telphone">手机号码：</label> --> <input
-							id="telphone" name="telphone" class="required" value
-							placeholder="Email / Phone Number" style="border-radius:8px;""/>
+						<input id="username" name="username" class="required" value
+							placeholder="Username / Email / Phone" style="border-radius:5px;""/>
 					</p>
 					<p class="clearfix">
-						<!-- <label class="one" for="password">登录密码：</label> --> <input
-							id="password" name="password" type="password"
+						<input id="password" name="password" type="password"
 							class="{required:true,rangelength:[8,20],}" value
-							placeholder="Your Password" style="border-radius:8px;"/>
+							placeholder="Your Password" style="border-radius:5px;"/>
 					</p>
 					<p class="clearfix">
-						<input class="submit" type="submit" value="Login" style="border-radius:8px;"/>
+						<input class="submit" type="submit" value="Login" style="border-radius:5px;"/>
 					</p>
 					
 				</form>
@@ -62,57 +91,5 @@
 		
 	</section>
 	<!--  end hero section  -->
-
-	
-	<footer>
-		<div class="wrapper footer">
-			<ul>
-				<li class="links">
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Policy</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</li>
-
-				<li class="links">
-					<ul>
-						<li><a href="#">Appartements</a></li>
-						<li><a href="#">Houses</a></li>
-						<li><a href="#">Villas</a></li>
-						<li><a href="#">Mansions</a></li>
-						<li><a href="#">...</a></li>
-					</ul>
-				</li>
-
-				<li class="links">
-					<ul>
-						<li><a href="#">New York</a></li>
-						<li><a href="#">Los Anglos</a></li>
-						<li><a href="#">Miami</a></li>
-						<li><a href="#">Washington</a></li>
-						<li><a href="#">...</a></li>
-					</ul>
-				</li>
-
-				<li class="about">
-					<p>La Casa is real estate minimal html5 website template, designed and coded by pixelhint, tellus varius, dictum erat vel, maximus tellus. Sed vitae auctor ipsum</p>
-					<ul>
-						<li><a href="http://facebook.com/pixelhint" class="facebook" target="_blank"></a></li>
-						<li><a href="http://twitter.com/pixelhint" class="twitter" target="_blank"></a></li>
-						<li><a href="http://plus.google.com/+Pixelhint" class="google" target="_blank"></a></li>
-						<li><a href="#" class="skype"></a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-
-		<div class="copyrights wrapper">
-			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
-		</div>
-	</footer><!--  end footer  -->
-	
 </body>
 </html>
