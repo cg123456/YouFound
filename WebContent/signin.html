@@ -7,46 +7,14 @@
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<!-- 异步加载 -->
-	<script src="http://api.geetest.com/get.php"></script>
+	<script type="text/javascript" src="js/checkVerifyCode.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/signupin.css">
-	<script>
-	alert("成功回调0");
-	/* var config = new Object(); */
-	/* config.gt = "cbf585f5997c91060c53d2207092c360";
-	config.challenge = "";
-	config.product = "embed";
-	config.lang = "zh-cn";
-	config.sandbox = true;
-	config.width = ""; */
-	alert("成功回调1");
-    var captchaObj = new Geetest(config); // 实例化，config为配置参数
-	alert("成功回调2");
-    captchaObj.appendTo("#vaildate"); // 绑定到id为captcha的元素上
-	alert("成功回调3");
-    captchaObj.onSuccess(function () {
-    alert("成功回调");
-        // 成功回调
-    });
-
-    captchaObj.getValidate(); // 获取成功后的验证信息，失败是返回false
-    /* // 当geetest库加载好后回调initCaptcha
-    // 注意initCaptcha必须在全局作用域下定义
-    var initCaptcha = function () {
-
-        var captchaOjb = new Geetest(config);
-
-        captchaObj.appendTo("#vaildate");
-
-        captchaObj.onSuccess(function () {
-            // 成功回调
-        });
-
-        captchaObj.getValidate(); // 获取成功后的验证信息，失败是返回false
-    }; */
-    
-
-</script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		createCode();
+	});
+	</script>
 	
 </head>
 <body>
@@ -56,7 +24,7 @@
 			<div id="label"><a href="index.html" >&#60; Back to HomePage</a></div>
 		</div>
 		<div class="signup">
-			<div id="vaildate" style="width:300px; height:150px; background:red">asasas</div>
+			<!-- <div id="vaildate" style="width:300px; height:150px; background:red">asasas</div> -->
 			<div id="logo">
 				<img class="logo" src="img/1.0logo_vqfr2u.png"></img>
 			</div>
@@ -65,13 +33,22 @@
 				<form id="signinForm" method="post" action="" class="zcform">
 					<p class="clearfix">
 						<input id="username" name="username" class="required" value
-							placeholder="Username / Email / Phone" style="border-radius:5px;""/>
+							placeholder="Username / Email / Phone" style="border-radius:5px;"/>
+					</p>
+					<p class="clearfix">
+						<input type="text" id="J_codetext" class="checkCode" placeholder="Type Here"
+							maxlength="5" style="border-top-left-radius:5px; border-bottom-left-radius:5px" >
+						<canvas id="myCanvas" class="randomCode" onclick="createCode()"
+						style="border-top-right-radius:5px; border-bottom-right-radius:5px">
+							Your browser does not support the canvas element.
+						</canvas>
 					</p>
 					<p class="clearfix">
 						<input id="password" name="password" type="password"
 							class="{required:true,rangelength:[8,20],}" value
 							placeholder="Your Password" style="border-radius:5px;"/>
 					</p>
+					
 					<p class="clearfix">
 						<input class="submit" type="submit" value="Login" style="border-radius:5px;"/>
 					</p>

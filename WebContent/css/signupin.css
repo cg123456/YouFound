@@ -55,6 +55,32 @@ img .logo {
 	/* background: rgba(0,0,0, .2); */
 }
 
+/*check-code*/
+/* .checkcode{
+	float: left;
+	margin-top: 10px;
+	width: 182px;
+	height: 42px;
+	border: 1px solid #008cff;
+	border-radius: 3px;
+	background: #fff;
+} */
+/* .checkcode input{
+	float: left;
+	text-align: center;
+	width: 185px;
+	height: 36px;
+	padding: 0px;
+	color: #000;
+}
+.checkcode canvas{
+	float: right;
+	width: 85px;
+	height: 36px;
+	padding: 3px;
+} */
+
+
 
 
 /*表单部分*/
@@ -70,7 +96,7 @@ html,body{ font-size:8px;font-family:"微软雅黑";overflow-x:hidden;}
 .right{float:right;}
 .clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
 .clearfix{zoom:1;}
-input:focus{border-color:#FC0;}
+/* input:focus{border-color:#FC0;} */
 /* zcform */
 .zcform{/* margin:40px 0 0 340px; */margin-top:40px; text-align:center;vertical-align:middle;}
 .zcform p{margin-bottom:10px;}
@@ -88,6 +114,21 @@ input:focus{border-color:#FC0;}
 .get_code{height:44px;width:15%;margin-left:2%;border:1px solid #ccc;cursor:pointer;}
 .agreement{margin-left:22%;height:30px;line-height:30px;font-size:7px;}
 .agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;}
+
+.checkCode {
+	text-align: center;
+	margin-left:22%;
+	border:1px solid #ccc;
+	border-right: 0;
+	height:42px;
+	width:38%;
+	_line-height:46px;
+	text-indent:10px;
+}
+.randomCode {float:left;height:42px;width:17%;background-color:#fff;border:1px solid #ccc;border-left:none;cursor:pointer;
+}
+
+
 /*
 本代码由素材家园收集并编辑整理;
 尊重他人劳动成果;
