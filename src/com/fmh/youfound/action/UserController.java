@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fmh.youfound.entity.User;
 import com.fmh.youfound.service.UserService;
 import com.fmh.youfound.utils.EmailUtil;
+import com.fmh.youfound.utils.RegexUtil;
 
 /** 
  * @author fengmuhai
@@ -62,6 +64,33 @@ public class UserController {
 		
 		System.out.println("新增用户成功！");
 		return "../success";
+	}
+	
+	@RequestMapping(value="/login.do")
+	public @ResponseBody Map<String,Object> login(HttpServletRequest req) {
+		System.out.println("invoke method login()");
+		String[] params = req.getParameter("username_password").split("\\|");
+		String username = params[0];
+		String password = params[1];
+		/*String username = req.getParameter("username");
+		String password = req.getParameter("password");*/
+		Map<String,Object> map = new HashMap<String, Object>();
+		User user;
+		if(RegexUtil.isCellPhoneNumber(username)){	//判断是否为手机号
+			user = userService.getUserByPhone(username);
+		} else if(RegexUtil.isEmail(username)) {
+			user = userService.getUserByEmail(username);
+		} else {	//用户名
+			user = userService.getUserByUsername(username);
+		}
+		if(null != user && user.getPasswprd().equals(password)) {
+			map.put("msg","OK");
+			//mv.setViewName("../success");
+		} else {	//手机号不存在或密码错误
+			//mv.setViewName("../signin");
+			map.put("msg","账号或密码错误");
+		}
+		return map;
 	}
 	
 	/**
@@ -131,7 +160,6 @@ public class UserController {
         } else {
         	map.put("msg", "nomatch");
         }
-        	
         return map;  
     }  
 	
@@ -150,6 +178,12 @@ public class UserController {
         return map;  
     }  
 	
+	//@RequestMapping(value="sendEmail.do")
+	public @ResponseBody Map<String,Object> sendEmailNone(HttpServletRequest request) throws IOException{  
+        Map<String,Object> map = new HashMap<String,Object>();  
+        map.put("msg", "success");
+        return map;  
+    }  
 	
 
 }

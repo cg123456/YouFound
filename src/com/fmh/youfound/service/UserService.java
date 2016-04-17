@@ -32,5 +32,25 @@ public interface UserService {
 	 */
 	boolean exsitEmail(String email);
 
+	/**
+	 * 通过phoneNumber拿到User
+	 * @param phoneNumber
+	 * @return
+	 */
+	User getUserByPhone(String phoneNumber);
+	
+	/**
+	 * 通过email拿到User
+	 * @param email
+	 * @return
+	 */
+	User getUserByEmail(String email);
+
+	/**
+	 * 通过username拿到User
+	 * @param username
+	 * @return
+	 */
+	User getUserByUsername(String username);
 
 }

@@ -35,6 +35,7 @@ function createRandomLine(ctx) {
 }
 
 var code =new Array(5); //在全局 定义验证码   
+var codeStr;
 var color =new Array(5); 
 function createCode(){       
     /*code = "";   */   
@@ -47,6 +48,7 @@ function createCode(){
     for(var i=0;i<codeLength;i++) {
        var charIndex = Math.floor(Math.random()*42);      
       code[i] =selectChar[charIndex];
+      codeStr =+ selectChar[charIndex];
     }
     for(var i=0;i<selectColor.length;i++) {
     	var charIndex = Math.floor(Math.random()*32);      
@@ -80,6 +82,25 @@ function validate () {
       return true;
     }
 
+}
+
+
+function validateLogin() {
+	if($("username").val()==null || $("username").val()=="" ||
+	   $("password").val()==null || $("password").val()=="" ||
+	   validateCheckCode()==false ){
+		
+	}
+}
+
+function validateCheckCode() {
+	if($("#J_codetext").val().toUpperCase()==trim(codeStr.toUpperCase()))
+		return true;
+	return false;
+}
+
+function validateCheckCodeAndLogin() {
+	
 }
 
 //为确定按钮添加回车事件
