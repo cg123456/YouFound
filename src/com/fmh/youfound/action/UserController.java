@@ -115,7 +115,8 @@ public class UserController {
 	 * ajax验证邮箱是否已存在数据库
 	 */
 	@RequestMapping(value="vaildateEmail.do")  
-    public @ResponseBody Map<String,Object> vaildateEmail(HttpServletRequest request, HttpServletResponse response) throws IOException{  
+    public @ResponseBody Map<String,Object> vaildateEmail(HttpServletRequest request, 
+    		HttpServletResponse response) throws IOException{  
         //System.out.println(request.getParameter("email"));
 		String email = request.getParameter("email");
         Map<String,Object> map = new HashMap<String,Object>();  

@@ -7,8 +7,8 @@
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<script type="text/javascript" src="js/checkVerifyCode.js" ></script>
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/checkVerifyCode.js" ></script>
 	<link rel="stylesheet" type="text/css" href="css/signupin.css">
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -16,6 +16,8 @@
 	});
 	
 	function login() {
+		alert("hahahahhahahahahahahahahahahhaha");
+		$("#login_submit").css("background","rgb(99,209,169)");
 		if($("#password").val().length()<8) {
 			$("#error_tip").html("密码长度为8-20字符");
 			$("#error_tip").css("display","block");
@@ -86,7 +88,7 @@
 					
 					<p class="clearfix">
 						<input id="login_submit" class="submit" type="button" value="Login" style="border-radius:5px;"
-						disabled="disabled" onclick="login()"/>
+						 onclick="login()"/><!-- disabled="disabled" -->
 					</p>
 					
 				</form>

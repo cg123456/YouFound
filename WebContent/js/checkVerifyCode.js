@@ -48,7 +48,7 @@ function createCode(){
     for(var i=0;i<codeLength;i++) {
        var charIndex = Math.floor(Math.random()*42);      
       code[i] =selectChar[charIndex];
-      codeStr =+ selectChar[charIndex];
+      codeStr = codeStr+selectChar[charIndex];
     }
     for(var i=0;i<selectColor.length;i++) {
     	var charIndex = Math.floor(Math.random()*32);      
@@ -97,17 +97,18 @@ function validateLogin() {
 		$("#login_submit").setAttribute("disabled", true);
 		$("#login_submit").css("background","#888");
 	} else {
-		$("#login_submit").removeAttribute("disable");
+		//$("#login_submit").removeAttribute("disabled");
 		$("#login_submit").css("background","rgb(99,209,169)");
 	}
 }
 
 function validateCheckCode() {
-	alert("验证码验证");
+	alert("验证码验证:"+codeStr);
 	//if($("#J_codetext").val().toLocaleUpperCase()==$.tirm(codeStr.toLocaleUpperCase()))
+	if($("#J_codetext").val().toLowerCase()==codeStr.toString().toLowerCase())
 		checkcode = true;
-	//else 
-		//checkcode = false;
+	else 
+		checkcode = false;
 }
 
 function validateCheckCodeAndLogin() {

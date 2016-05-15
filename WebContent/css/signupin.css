@@ -107,7 +107,7 @@ html,body{ font-size:8px;font-family:"微软雅黑";overflow-x:hidden;}
 .zcform label.one{width:90px;height:48px;text-align:right;color:#000;}
 .zcform input{float:left;font-size:14px;font-family:"微软雅黑";color:#666;}
 .zcform button{float:left; margin-left:22%; background-color: transparent; border: 0; cursor:pointer; font-size:16px; font-family:"微软雅黑";color:blue;}
-.zcform .submit{/* background:#F93; */background:#888;font-size:15px;letter-spacing:4px;color:#fff;cursor:pointer;border:none;}
+.zcform .submit{/* background:#F93; #888*/background:red;font-size:15px;letter-spacing:4px;color:#fff;cursor:pointer;border:none;}
 
 #telphone,#email,#username,#password,#confirm_password,.submit,#agent{margin-left:22%;border:1px solid #ccc;width:55%;height:42px;text-indent:10px;}
 .identifying_code{margin-left:22%;border:1px solid #ccc;height:42px;width:38%;_line-height:46px;text-indent:10px;}
