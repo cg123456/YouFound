@@ -35,7 +35,7 @@ function createRandomLine(ctx) {
 }
 
 var code =new Array(5); //在全局 定义验证码   
-var codeStr;
+var codeStr="";
 var color =new Array(5); 
 function createCode(){       
     /*code = "";   */   
@@ -84,19 +84,30 @@ function validate () {
 
 }
 
-
+var checkcode = false;
 function validateLogin() {
-	if($("username").val()==null || $("username").val()=="" ||
-	   $("password").val()==null || $("password").val()=="" ||
-	   validateCheckCode()==false ){
-		
+	alert("验证登入");
+	alert($("#username").val()+$("#password").val());
+	validateCheckCode();
+	alert("validateCheckCode:");
+	alert("验证登入");
+	if($("#username").val()==null || $("username").val()=="" ||
+	   $("#password").val()==null || $("password").val()=="" ||
+	   checkcode==false ){
+		$("#login_submit").setAttribute("disabled", true);
+		$("#login_submit").css("background","#888");
+	} else {
+		$("#login_submit").removeAttribute("disable");
+		$("#login_submit").css("background","rgb(99,209,169)");
 	}
 }
 
 function validateCheckCode() {
-	if($("#J_codetext").val().toUpperCase()==trim(codeStr.toUpperCase()))
-		return true;
-	return false;
+	alert("验证码验证");
+	//if($("#J_codetext").val().toLocaleUpperCase()==$.tirm(codeStr.toLocaleUpperCase()))
+		checkcode = true;
+	//else 
+		//checkcode = false;
 }
 
 function validateCheckCodeAndLogin() {

@@ -16,6 +16,10 @@
 	});
 	
 	function login() {
+		if($("#password").val().length()<8) {
+			$("#error_tip").html("密码长度为8-20字符");
+			$("#error_tip").css("display","block");
+		}
 		$.ajax({
         	data:"username_password="+$("#username").val()+"|"+$("#password").val(),
         	type:"POST",
@@ -27,6 +31,7 @@
         	success: function(data) {
         		if($.trim(data.msg)==$.trim("账号或密码错误")) {
         			$("#error_tip").html(data.msg);
+        			$("#error_tip").css("display","block");
         		} else {
         			window.location.href = "index.html"; 
         		}
@@ -52,7 +57,13 @@
 			<p style="text-align:center;"><a style="font-size:12px">Find you new hone on YouFound</a></p>
 			<div class="form_wrapper">
 				<form id="signinForm" method="post" action="user/login.do" class="zcform">
-					<p><a id="error_tip" style="font-color:red"></a></p>
+					<!-- <p>
+						<a id="error_tip"></a>
+					</p> -->
+					<p>
+						<a id="error_tip"  style="font-size:14px; color:red; float:left; 
+						margin-bottom:10px; margin-left:22%;display: none;" ></a>
+					</p>
 					<p class="clearfix">
 						<input id="username" name="username" class="required" value
 							placeholder="Username / Email / Phone" style="border-radius:5px;"
@@ -74,8 +85,8 @@
 					</p>
 					
 					<p class="clearfix">
-						<input class="submit" type="button" value="Login" style="border-radius:5px;"
-						onclick="login()"/>
+						<input id="login_submit" class="submit" type="button" value="Login" style="border-radius:5px;"
+						disabled="disabled" onclick="login()"/>
 					</p>
 					
 				</form>

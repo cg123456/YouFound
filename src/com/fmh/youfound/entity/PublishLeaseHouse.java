@@ -22,7 +22,7 @@ public class PublishLeaseHouse {
 	private String leaseType;		//出租类型，整租，月租，合租，短租等
 	private String housingEstate;	//小区
 	//@OneToOne
-	//private Address address;		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
+	//private Address address;、		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
 									//哪个城市，哪个区/商圈,哪个小区
 	
 	//private HouseType houseType;	//户型
