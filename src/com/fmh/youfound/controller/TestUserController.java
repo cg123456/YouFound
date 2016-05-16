@@ -1,4 +1,4 @@
-package com.fmh.youfound.action;
+package com.fmh.youfound.controller;
 
 import java.util.Iterator;
 import java.util.List;
