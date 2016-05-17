@@ -46,5 +46,29 @@ public class CriteriaQuery {
 		criteria.add(Restrictions.lt(propertyName, value));
 		return this;
 	}
+
+	public Logger getLogger() {
+		return logger;
+	}
+
+	public void setLogger(Logger logger) {
+		this.logger = logger;
+	}
+
+	public Criteria getCriteria() {
+		return criteria;
+	}
+
+	public void setCriteria(Criteria criteria) {
+		this.criteria = criteria;
+	}
+
+	public Class getCls() {
+		return cls;
+	}
+
+	public void setCls(Class cls) {
+		this.cls = cls;
+	}
 	
 }

@@ -22,18 +22,18 @@ public interface BaseDao<O> {
 	/**
 	 * 持久化Object对象
 	 */
-	boolean save(Object obj);
+	void save(Object obj);
 	
 	/**
 	 * 删除一个Object对象
 	 */
-	boolean delete(Object obj);
+	void delete(Object obj);
 	
 	/**
 	 * 修改实例对象
 	 * @param obj
 	 */
-	boolean update(Object obj);
+	void update(Object obj);
 	
 	/**
 	 * 加载全部的Object对象
@@ -44,5 +44,8 @@ public interface BaseDao<O> {
 	 * 通用搜索
 	 */
 	List<O> search(CriteriaQuery cq);
+
+	//分页查询
+	List<O> search(CriteriaQuery cq, int page, int pageSize);
 	
 }

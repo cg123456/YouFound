@@ -20,15 +20,17 @@ public class XmlUtils {
 		//String str = xmlFileToString("src/com/fmh/youfound/source/xml/leasehouse-zufang.com-2.xml");
 		//LeaseHouseSource lhs = (LeaseHouseSource) toBean(new File("src/com/fmh/youfound/source/xml/搜房网租房1.xml"),LeaseHouseSource.class);
 		//LeaseHouseSource lhs = (LeaseHouseSource) toBean(str,LeaseHouseSource.class);
-		SaleHouseSource sh = toBean(new File("src/com/fmh/youfound/source/xml/搜房网卖房-新房1.xml"), SaleHouseSource.class);
-		System.out.println(sh.toString());
+		/*SaleHouseSource sh = toBean(new File("src/com/fmh/youfound/source/xml/搜房网卖房-新房1.xml"), SaleHouseSource.class);
+		System.out.println(sh.toString());*/
+		LeaseHouseSource lh = toBean(new File("src/com/fmh/youfound/source/xml/leasehouse-zufang.com-2.xml"), LeaseHouseSource.class);
+		System.out.println(lh.toString());
 	}
 	
 	/**
 	 * xml字符串转对象
 	 * @param xmlStr	xml字符串
 	 * @param cls		要转成的类
-	 * @return			该类的尸体对象
+	 * @return			该类的实体对象
 	 */
 	public static <T> T toBean(String xmlStr, Class<T> cls) {
 		XStream xstream = new XStream(new DomDriver());
@@ -42,7 +44,7 @@ public class XmlUtils {
 	 * xml文件转对象
 	 * @param xmlFile	xml文件
 	 * @param cls		要转成的类
-	 * @return			该类的尸体对象
+	 * @return			该类的实体对象
 	 */
 	public static <T> T toBean(File xmlFile, Class<T> cls) {
 		XStream xstream = new XStream(new DomDriver());

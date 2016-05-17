@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import com.soufang.leasehouse.entity.AgentIDList;
 import com.soufang.leasehouse.entity.CommentList;
 import com.soufang.leasehouse.entity.CommentListNew;
+import com.youfound.base.entity.BaseObject;
 
 /** 
 * @author  作者 E-mail: fmuhai@foxmail.com
@@ -12,8 +13,10 @@ import com.soufang.leasehouse.entity.CommentListNew;
 * @version 1.0 
 */
 @Entity
-public class YFLeaseHouse {
+public class LeaseHouse extends BaseObject {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String id;
 	private String sourceId;
 	

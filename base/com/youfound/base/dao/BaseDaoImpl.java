@@ -61,48 +61,50 @@ public class BaseDaoImpl<O extends BaseObject> implements BaseDao<O> {
 	
 
 	@Override
-	public Object get(Class<O> c, long id) {
-		// TODO Auto-generated method stub
-		
-		return null;
+	public Object get(Class<O> cls, long id) {
+		return sessionFactory.getCurrentSession().get(cls, id);
 	}
 
 	@Override
-	public boolean save(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+	public void save(Object obj) {
+		sessionFactory.getCurrentSession().save(obj);
 	}
 
 	@Override
-	public boolean delete(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+	public void delete(Object obj) {
+		sessionFactory.getCurrentSession().delete(obj);
 	}
 
 	@Override
-	public boolean update(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+	public void update(Object obj) {
+		sessionFactory.getCurrentSession().update(obj);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<O> findAll() {
-		// TODO Auto-generated method stub
 		String cls = this.oType.getSimpleName();
 		return (List<O>) sessionFactory.getCurrentSession()
 				.createQuery("from "+cls).list();
 	}
 	
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<O> search(CriteriaQuery cq) {
-		// TODO Auto-generated method stub
-		Criteria crit = sessionFactory.getCurrentSession().createCriteria(oType);
-		crit.setMaxResults(50);
-		List cats = crit.list();
-		//cats.add(Restrictions.eq(propertyName, value));
-		return null;
+		logger.info("search:" + cq.getCriteria().toString());
+		Criteria crit = cq.getCriteria();
+		return crit.list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<O> search(CriteriaQuery cq, int page, int pageSize) {
+		logger.info("search:" + cq.getCriteria().toString());
+		Criteria crit = cq.getCriteria();
+		crit.setFirstResult(page * pageSize);
+        crit.setMaxResults(pageSize);
+		return crit.list();
 	}
 
 
