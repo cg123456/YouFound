@@ -12,94 +12,106 @@
 	
 	<!-- <link rel="stylesheet" type="text/css" href="css/banner.css"> -->
 
-	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<!-- 城市定位 -->
-	<script language="javascript" type="text/javascript" 
-	src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
-	<script language="javascript" type="text/javascript" >
-		
-		jQuery(function($){
-			var city = remote_ip_info.city;
-            var insert = $("#city");
-            //hao.html("hi, " + txt + "<a href='" + txt + "'>d</a>");
-            insert.html(city + "[切换]" );
-        });
-		
-		function search() {
-			window.location.href="search.html";
-		}
-		
-		
-	</script>
 </head>
 <body>
 
 	<section class="hero">
 		<header>
 			<div class="wrapper">
-				<a href="#" style="font-size:32px; text-decoration:none; line-height:60px; color:rgb(255,223,77); ">优房网</a><!-- <img src="img/logo.png" class="logo" alt="" titl="" /> -->
-				<!-- </a> <a href="#" class="hamburger"></a> -->
-				<a id="city" href="#" style="font-size:12px; color:#333; text-decoration:none;"></a> 
+				<a href="#"><img src="img/logo.png" class="logo" alt="" titl="" />
+				</a> <a href="#" class="hamburger"></a>
 				<nav>
 					<ul>
-						<li><a href="#">首页</a>
+						<li><a href="#">Buy</a>
 						</li>
-						<li><a href="#">租房</a>
+						<li><a href="#">Rent</a>
 						</li>
-						<li><a href="#">新房</a>
+						<li><a href="#">Sell</a>
 						</li>
-						<li><a href="signin.html">登入</a>
-						</li>
-						<li><a href="emailSignup.html">注册</a>
+						<li><a href="#">About</a>
 						</li>
 						<!-- <li><a href="#">Contact</a>
 						</li> -->
 					</ul>
-					<!-- <a href="signin.html" class="login_btn">注册</a> -->
-					<a href="emailSignup.html" class="login_btn">发布房源</a>
+					<a href="signin.html" class="login_btn">sign in</a>
+					<a href="emailSignup.html" class="login_btn">sign up</a>
 				</nav>
 			</div>
 		</header>
+		<!--  end header section  -->
+<!-- 
+		<div class="jumbotron banner-text">
+			<h2>Lorem Ipsum</h2>
+			<p>This is a simple hero unit, a simple jumbotron-style component
+				for calling extra attention to featured content or information.</p>
+				<p>This is a simple hero unit, a simple jumbotron-style component
+				for calling extra attention to featured content or information.</p>
+			<a class="btn btn-primary" href="#" role="button">Read more</a>
+		</div> -->
+		<!-- <section class="search">
+			<div class="wrapper">
+				<form action="user.do" method="post">
+					<input type="text" id="search" name="search"
+						placeholder="What are you looking for?" autocomplete="off" /> <input
+						type="submit" id="submit_search" name="submit_search" />
+				</form>
+				<a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+			</div>
+		</section> -->
 
 
-		
-		
-		<div class="search_div">
 		<section class="caption">
 			<h2 class="caption">Find You Dream Home</h2>
-			<!-- <h3 class="properties">Appartements - Houses - Mansions</h3> -->
+			<h3 class="properties">Appartements - Houses - Mansions</h3>
 		</section>
-			<div id="search">
-				<!-- <img src="images/search.png"></img> -->
-				<div id="search_button" onclick="search()"><!-- style="background:url('images/search.png') no-repeat"> -->
-				<!-- <input type="button" style="background:url('images/search.png') no-repeat" onclick="search()"/> --><!-- onclick="window.location.href='userLogin.jsp'"/> -->
-				<!-- <input type="button" style="" onclick="search()"/> -->
-				搜索</div>
-				<form id="search_form" action="search.action">
-    		  		<input name="searchFor" type="text" size="18" style="color:gray" value="请输入地段、小区或者房型" 
-    		  			onfocus="if (value =='请输入地段、小区或者房型'){value =''}"
-    		  			onblur="if (value ==''){value='请输入地段、小区或者房型'}"/>
-    	    	</form>
-	    	</div>
-	    	<div id="city_area">
-				<ul>
-					<li id="title"><a style="color:#ccc; text-decoration: none;">热门区域：</a></li>
-					<li><a href="#">天河</a></li>
-					<li><a href="#">越秀</a></li>
-					<li><a href="signin.html">荔湾</a></li>
-					<li><a href="emailSignup.html">黄埔</a></li>
-					<li><a href="#">番禺</a></li>
-					<li><a href="#">白云</a></li>
-					<li><a href="#">海珠</a></li>
-					<li><a href="#">花都</a></li>
-				</ul>
-			</div>
-		</div>
 		
 	</section>
+	<!--  end hero section  -->
+
+
+	<section class="search">
+		<div class="wrapper">
+			<form action="user.do" method="post">
+				<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
+				<input type="submit" id="submit_search" name="submit_search"/>
+			</form>
+			<a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+		</div>
+
+		<div class="advanced_search">
+			<div class="wrapper">
+				<span class="arrow"></span>
+				<form action="#" method="post">
+					<div class="search_fields">
+						<input type="text" class="float" id="check_in_date" name="check_in_date" placeholder="Check In Date"  autocomplete="off">
+
+						<hr class="field_sep float"/>
+
+						<input type="text" class="float" id="check_out_date" name="check_out_date" placeholder="Check Out Date"  autocomplete="off">
+					</div>
+					<div class="search_fields">
+						<input type="text" class="float" id="min_price" name="min_price" placeholder="Min. Price"  autocomplete="off">
+
+						<hr class="field_sep float"/>
+
+						<input type="text" class="float" id="max_price" name="max_price" placeholder="Max. price"  autocomplete="off">
+					</div>
+					<input type="text" id="keywords" name="keywords" placeholder="Keywords"  autocomplete="off">
+					<input type="submit" id="submit_search" name="submit_search"/>
+				</form>
+			</div>
+		</div><!--  end advanced search section  -->
+	</section><!--  end search section  -->
+
 
 	<section class="listings">
+	
+	
+	
+	
+	
 	
 			<div class="wrapper">
 			<ul class="properties_list">
