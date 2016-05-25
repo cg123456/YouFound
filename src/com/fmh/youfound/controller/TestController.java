@@ -34,7 +34,7 @@ public class TestController implements Controller {
 		return userService;
 	}
 
-	@Resource(name="userServiceImpl")
+	//@Resource(name="userServiceImpl")
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}

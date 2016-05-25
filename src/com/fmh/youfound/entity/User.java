@@ -6,13 +6,18 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
+import com.youfound.base.entity.BaseObject;
+
 /** 
  * @author fengmuhai
  * @date 2016-3-23 下午4:35:01 
  * @version 1.0  
  */
 @Entity
-public class User {
+public class User extends BaseObject {
+
+	
+	private static final long serialVersionUID = 1L;
 
 	public Long id;
 	

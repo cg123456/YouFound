@@ -26,7 +26,7 @@ import com.fmh.youfound.service.UserService;
 @Controller
 public class LeaseHouseController {
 
-	@Resource(name="leaseHouseService")
+	//@Resource(name="leaseHouseServiceImpl")
 	private LeaseHouseService leaseHouseService;
 
 	public LeaseHouseService getLeaseHouseService() {
@@ -44,7 +44,7 @@ public class LeaseHouseController {
 		return userDao;
 	}
 
-	@Resource(name="userDaoImpl")
+	//@Resource(name="userDaoImpl")
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
