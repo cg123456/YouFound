@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>La Casa - Real Estate HTML5 Home Page Template</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/search.css">
+	<link rel="stylesheet" type="text/css" href="css/publish.css">
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<!-- 城市定位 -->
+	<script language="javascript" type="text/javascript" 
+	src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<script language="javascript" type="text/javascript" >
+		
+		jQuery(function($){
+			var city = remote_ip_info.city;
+            var insert = $("#city");
+            insert.html(city + "[切换]" );
+
+            //给表单city赋值
+            $("#formCity").val(city);
+            
+            //给radio赋初始值
+            initChecked("#radio1","#inner1");
+            initChecked("#fitmentRadio2",null)
+            //给
+        });
+		
+		$(document).ready(function() {
+			$(".radio").click(function(){
+				//alert($("input[name='type'][checked]").val()); 这种写法不行
+				//alert($('input[name="rentType"]:checked').val());
+				if($('input[name="rentType"]:checked').val()=="alone") {
+					rentTypeChecked("#inner1");
+					rentTypeUnchecked("#inner2");
+					rentTypeUnchecked("#inner3");
+					
+				} else if($('input[name="rentType"]:checked').val()=="share") {
+					rentTypeUnchecked("#inner1");
+					rentTypeChecked("#inner2");
+					rentTypeUnchecked("#inner3");
+					
+				} else {
+					rentTypeUnchecked("#inner1");
+					rentTypeUnchecked("#inner2");
+					rentTypeChecked("#inner3");
+				}
+				   
+				//$("input[name='radioName'][checked]").val();  取radio的值
+				//$("input[name='radioName'][value=2]").attr("checked",true);   给radio 赋值, 选中值为2的radio
+				});
+		});
+		
+		function rentTypeChecked(id) {
+			$(id).css("color","rgb(255,102,0)");
+			$(id).css("border","2px solid rgb(255,102,0)");
+		}
+		function rentTypeUnchecked(id) {
+			$(id).css("color","black");
+			$(id).css("border","2px solid #DDD");
+		}
+		
+		function initChecked(radioID, innerID) {
+			$(radioID).attr("checked",true);
+			rentTypeChecked(innerID);
+		}
+		
+		//提交表单
+		function submitPublish() {
+
+			if(verifyForm()) {
+				getCheckedboxValue();
+				document.getElementById('publishForm').submit();
+			}
+		}
+		
+		//获取复选框数据
+		function getCheckedboxValue() {
+			/*相当于js的document.getElementByName("")
+			var equipments = $("equipmentType"); */
+			
+			var checked_value =""; 
+			$('input[name="equipmentType"]:checked').each(function(){ 
+				checked_value += $(this).val()+"|"; 
+			});
+			if(checked_value!="") {
+				checked_value = checked_value.substring(0,checked_value.length-1);
+			}
+			$("#equipmentValue").val(checked_value);
+			//alert($("#equipmentValue").val());
+			
+			/* var chk_value =[]; 
+			$('input[name="equipmentType"]:checked').each(function(){ 
+			chk_value.push($(this).val()); 
+			}); 
+			alert(chk_value.length==0 ?'你还没有选择任何内容！':chk_value); */
+			
+		}
+		
+		//验证表单
+		function verifyForm() {
+			if($("#communityName").val().trim()==""){
+				alert("请输入小区名称");
+				return false;
+			}
+			
+			if($("#selectDistrict").val().trim()=="0") {
+				alert("请选择请选择区域");
+				return false;
+			}
+			if($("#selectComArea").val().trim()=="0") {
+				alert("请选择请选择商圈");
+				return false;
+			}
+			if($("#communityAddress").val().trim()=="") {
+				alert("请输入小区具体地址");
+				return false;
+			}
+			
+			if($("#roomNum").val().trim()=="") {
+				alert("请输入房间数");
+				return false;
+			}
+			if(isNaN($("#roomNum").val())) {
+				alert("房间（室）数只能输入数字");
+				return false;
+			}
+			if($("#hallNum").val().trim()=="") {
+				alert("请输入客厅数");
+				return false;
+			}
+			if(isNaN($("#hallNum").val())) {
+				alert("客厅（厅）数只能输入数字");
+				return false;
+			}
+			
+			
+			if($("#buildingArea").val().trim()=="") {
+				alert("请输入建筑面积");
+				return false;
+			}
+			if(isNaN($("#buildingArea").val())) {
+				alert("建筑面积只能输入数字");
+				return false;
+			}
+			
+			
+			if($("#direction").val().trim()=="0") {
+				alert("请选择请选择朝向");
+				return false;
+			}
+			
+			if($("#floorLocation").val().trim()=="") {
+				alert("请输入楼层位置");
+				return false;
+			}
+			if(isNaN($("#floorLocation").val())) {
+				alert("楼层位置只能输入数字");
+				return false;
+			}
+			if($("#floorTotal").val().trim()=="") {
+				alert("请输入楼层总数");
+				return false;
+			}
+			if(isNaN($("#floorTotal").val())) {
+				alert("楼层总数只能输入数字");
+				return false;
+			}
+			
+			
+			if($("#price").val().trim()=="") {
+				alert("请输入租金");
+				return false;
+			}
+			if(isNaN($("#price").val())) {
+				alert("租金只能输入数字");
+				return false;
+			}
+			if($("#payType").val().trim()=="0") {
+				alert("请选择请支付类型");
+				return false;
+			}
+			
+			
+			if($("#houseTitleContent").val().trim()=="") {
+				alert("请输入房源标题");
+				return false;
+			}
+			
+			if($("#comment").val().trim()=="") {
+				alert("请输入房源描述");
+				return false;
+			}
+			
+			
+			if($("#houseOwnerName").val().trim()=="") {
+				alert("请输入房主/联系人姓名");
+				return false;
+			}
+			
+			if($("#phoneNumberContent").val().trim()=="") {
+				alert("请输入房主/联系人手机号");
+				return false;
+			}
+			
+			if($("#verifyCodeContent").val().trim()=="") {
+				alert("请输入手机验证码");
+				return false;
+			}
+			
+			
+			return true;
+		}
+		
+	</script>
+</head>
+<body>
+	<header  style="background-color:#333;">
+		<div class="wrapper">
+			<a href="index.html"
+				style="font-size: 32px; text-decoration: none; line-height: 60px; color: rgb(255, 223, 77);">优房网</a>
+			<a id="city" href="#"
+				style="font-size: 12px; color: #ddd; text-decoration: none;"></a>
+			<nav>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">租房</a></li>
+					<li><a href="#">新房</a></li>
+					<li><a href="signin.html">登入</a></li>
+					<li><a href="emailSignup.html">注册</a></li>
+					<!-- <li><a href="#">Contact</a>
+						</li> -->
+				</ul>
+				<!-- <a href="signin.html" class="login_btn">注册</a> -->
+				<a href="publish.html" class="login_btn">发布房源</a>
+			</nav>
+		</div>
+	</header>
+
+	<div class="publish">
+		<form id="publishForm" action="publish.do" method="post">
+			<h2>免费发布出租房源</h2>
+			<!-- 出租方式-->
+			<p id="leaseType" >
+				<span class="left">
+					<a>出租方式</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<span id="inner1" class="inner">
+					 	<input id="radio1" class="radio " type="radio" name="rentType" value="alone"/>整租
+					</span>
+					<span id="inner2" class="inner">
+					 	<input id="radio2" class="radio " type="radio" name="rentType" value="share"/>合租
+					</span>
+					<span id="inner3" class="inner">
+					 	<input id="radio3" class="radio " type="radio" name="rentType" value="short"/>短租
+					</span>
+				</span>
+			</p>
+			<!-- 小区名称 -->
+			<p id="communityTile">
+				<span class="left">
+					<a>小区名称</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="communityName" class="textInput" 
+					type="text" name="communityName" style="width:285px;"/>
+				</span>
+			</p>
+			<!-- 地址 -->
+			<p id="address">
+				<span class="left">
+					<a>地址</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="formCity" class="visable" name="formCity" type="text" value=""/>
+					<select class="district" name="selectDistrict" id="selectDistrict"> 
+					<option style="display:none" value="0">请选择区域</option>  
+					<option value="天河区">天河区</option>   
+       				<option value="越秀区">越秀区</option>   
+        			<option value="白云区">白云区</option>   
+       				<option value="海珠区">海珠区</option>   
+       			    <option value="番禺区">番禺区</option>
+       			    <option value="荔湾区">荔湾区</option>
+       			    <option value="南沙区">南沙区</option>
+       			    <option value="黄埔区">黄埔区</option>
+       			    <option value="花都区">花都区</option>
+       			    <option value="从化区">从化区</option>
+       			    <option value="广州周边">广州周边</option>
+        			<!-- <option value="1">天河区</option>   
+       				<option value="2">越秀区</option>   
+        			<option value="3">白云区</option>   
+       				<option value="4">海珠区</option>   
+       			    <option value="5">番禺区</option>
+       			    <option value="6">荔湾区</option>
+       			    <option value="7">南沙区</option>
+       			    <option value="8">黄埔区</option>
+       			    <option value="9">花都区</option>
+       			    <option value="10">从化区</option>
+       			    <option value="11">广州周边</option> -->
+
+      				</select> 
+      				<input id="districtValue" class="visable" name="district" type="text"/>  
+      				<select class="comArea" name="selectComArea" id="selectComArea"> 
+					<option style="display:none" value="0">请选择商圈</option>  
+        			<option value="1">宝岗</option>   
+       				<option value="2">越秀区</option>   
+        			<option value="3">白云区</option>   
+       				<option value="4">海珠区</option>   
+       			    <option value="5">番禺区</option>
+       			    <option value="6">荔湾区</option>
+       			    <option value="7">南沙区</option>
+       			    <option value="8">黄埔区</option>
+       			    <option value="9">花都区</option>
+       			    <option value="10">从化区</option>
+       			    <option value="11">广州周边</option>
+      				</select>   
+      				<!-- <input id="comAreaValue" class="visable" name="comArea" type="text"/>  -->
+      				<input id="communityAddress" class="textInput" name="communityAddress" type="text"/>
+				</span>
+			</p>
+			<!-- 户型 -->
+			<p id="houseType">
+				<span class="left">
+					<a>户型</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="roomNum" class="textInput" name="roomNum"
+					type="text" style="width:75px; margin-right:10px;"/><a>室</a>
+					<input id="hallNum" class="textInput" name="hallNum"
+					type="text" style="width:74px; margin-right:10px;"/><a>厅</a>
+					<input id="toiletNum" class="textInput" name="toiletNum"
+					type="text" style="width:75px; margin-right:10px;"/><a>卫</a>
+				</span>
+			</p>
+			<!-- 建筑面积 -->
+			<p id="area">
+				<span class="left">
+					<a>建筑面积</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="buildingArea" class="textInput" name="buildingArea"
+					type="text" style="width:185px; margin-right:10px;"/><a>平方米</a>
+				</span>
+			</p>
+			<!-- 装修程度 -->
+			<p id="fitment">
+				<span class="left">
+					<a>装修程度</a>
+				</span>
+				<span class="right">
+					<span id="fitSpan1" class="inner2">
+					 	<input id="fitmentRadio1" class="fitmentRadio " type="radio" name="fitmentType" value="gorgeousness"/>豪华装修
+					</span>
+					<span id="fitSpan2" class="inner2">
+					 	<input id="fitmentRadio2" class="fitmentRadio " type="radio" name="fitmentType" value="perfect"/>精装修
+					</span>
+					<span id="fitSpan3" class="inner2">
+					 	<input id="fitmentRadio3" class="fitmentRadio " type="radio" name="fitmentType" value="medium"/>中等装修
+					</span>
+					<span id="fitSpan4" class="inner2">
+					 	<input id="fitmentRadio4" class="fitmentRadio " type="radio" name="fitmentType" value="simpleness"/>简装修
+					</span>
+					<span id="fitSpan5" class="inner2">
+					 	<input id="fitmentRadio5" class="fitmentRadio " type="radio" name="fitmentType" value="rough"/>毛坯
+					</span>
+				</span>
+			</p>
+			<!-- 朝向 -->
+			<p>
+				<span class="left">
+					<a>朝向</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<select class="direction" name="direction" id="direction"> 
+					<option style="display: none" value="0">请选择</option>
+						<!-- <option value="1">南北</option>
+						<option value="2">南</option>
+						<option value="3">东南</option>
+						<option value="4">东</option>
+						<option value="5">东西</option>
+						<option value="6">北</option>
+						<option value="7">西</option>
+						<option value="8">西南</option>
+						<option value="9">东北</option>
+						<option value="10">西北</option> -->
+						<option value="南北">南北</option>
+						<option value="南">南</option>
+						<option value="东南">东南</option>
+						<option value="东">东</option>
+						<option value="东西">东西</option>
+						<option value="北">北</option>
+						<option value="西">西</option>
+						<option value="西南">西南</option>
+						<option value="东北">东北</option>
+						<option value="西北">西北</option>
+
+				</select>   
+				</span>
+			</p>
+			<!-- 楼层 -->
+			<p id="floor">
+				<span class="left">
+					<a>楼层</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="floorLocation" class="textInput" name="floorLocation"
+					type="text" style="width:75px; margin-right:10px;"/><a>层 &nbsp;，&nbsp;共</a>
+					<input id="floorTotal" class="textInput" name="floorTotal"
+					type="text" style="width:74px; margin-right:10px;"/><a>层</a>
+				</span>
+			</p>
+			<!-- 楼栋号 -->
+			<p id="">
+				<span class="left">
+					<a>楼栋号</a>
+				</span>
+				<span class="right">
+					<input id="buildNo" class="textInput" name="buildNo"
+					type="text" style="width:75px; margin-right:10px;"/><a>幢/号/层</a>
+					<input id="cellNo" class="textInput" name="cellNo"
+					type="text" style="width:74px; margin-right:10px;"/><a>单元</a>
+					<input id="roomNo" class="textInput" name="roomNo"
+					type="text" style="width:75px; margin-right:10px;"/><a>室</a> 
+				</span>
+			</p>
+			<!-- 租金 -->
+			<p id="payment">
+				<span class="left">
+					<a>租金</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="price" class="textInput" name="price"
+					type="text" style="width:75px; margin-right:10px;"/><a>&nbsp;元 &nbsp;/&nbsp; 月&nbsp;</a>
+					<select class="payType" name="payType" id="payType"> 
+					<option style="display: none" value="0">选择支付类型</option>
+						<option value="押一付三">押一付三</option>
+						<option value="押一付二">押一付二</option>
+						<option value="押一付一">押一付一</option>
+						<option value="押二付一">押二付一</option>
+						<option value="半年付">半年付</option>
+						<option value="年付">年付</option>
+						<option value="面议">面议</option>
+						<!-- <option value="1">押一付三</option>
+						<option value="2">押一付二</option>
+						<option value="3">押一付一</option>
+						<option value="4">押二付一</option>
+						<option value="5">半年付</option>
+						<option value="6">年付</option>
+						<option value="7">面议</option> -->
+					</select>   
+				</span>
+			</p>
+			<!-- 配套设施 -->
+			<p id="equipment">
+				<span class="left">
+					<a>配套设施</a>
+				</span>
+				<span class="right">
+					<span id="inner1" class="inner3">
+					 	<input id="checkbox1" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="床位"/>床位
+					</span>
+					<span id="inner2" class="inner3">
+					 	<input id="checkbox2" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="宽带"/>宽带
+					</span>
+					<span id="inner3" class="inner3">
+					 	<input id="checkbox3" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="电视"/>电视
+					</span>
+					<span id="inner1" class="inner3">
+					 	<input id="checkbox4" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="冰箱"/>冰箱
+					</span>
+					<span id="inner1" class="inner3">
+					 	<input id="checkbox5" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="空调"/>空调
+					</span>
+					<span id="inner1" class="inner3">
+					 	<input id="checkbox6" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="热水器"/>热水器
+					</span>
+					<span id="inner1" class="inner3">
+					 	<input id="checkbox7" class="equipmentCheckbox " type="checkbox" name="equipmentType" value="洗衣机"/>洗衣机
+					</span>
+					<!-- <span id="inner1" class="inner3">
+					 	<input id="checkbox" class="equipmentCheckbox " type="checkbox" name="rentType" value="alone"/>暖气
+					</span> -->
+					<input id="equipmentValue" class="visable" name="equipmentValue" value=""></input>>
+				</span>
+			</p>
+			<!-- 房源标题 -->
+			<p id="houseTitle">
+				<span class="left">
+					<a>房源标题</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="houseTitleContent" class="textInput" name="houseTitleContent"
+					type="text" style="width:450px; margin-right:10px;"/>
+				</span>
+			</p>
+			<!-- 房源描述 -->
+			<p id="houseComment"  style="height:100px;">
+				<span class="left">
+					<a>房源描述</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<textarea id=comment name="comment"> 
+					</textarea>
+				</span>
+			</p>
+			<!-- 上传图片 -->
+			<p id="picture">
+				<span class="left">
+					<a>上传图片</a>
+				</span>
+				<span class="right">
+					<span class="fileInput">
+					<input  type="file" name="pic" accept="image/gif/png" />
+					</span>
+				</span>
+			</p>
+			<!-- 姓名 -->
+			<p id="houseOwner">
+				<span class="left">
+					<a>姓名</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="houseOwnerName" class="textInput" name="houseOwnerName"
+					type="text" />
+				</span>
+			</p>
+			<!-- 联系电话 -->
+			<p id="phoneNumber">
+				<span class="left">
+					<a>联系电话 </a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="phoneNumberContent" class="textInput" name="phoneNumberContent"
+					type="text"/>
+				</span>
+			</p>
+			<!-- 验证码 -->
+			<p id="verifyCode">
+				<span class="left">
+					<a>手机验证码</a>
+					<a style="color:red">*</a>
+				</span>
+				<span class="right">
+					<input id="verifyCodeContent" class="textInput" 
+					type="text" style="width:100px;"/>
+					<input type="button" name="getCode" value="获取验证码"
+					style="width:93px;height:28px;line-height:30px;
+					margin-top:8px;cursor:pointer;"/>
+				</span>
+			</p>
+			<!-- 确认提交-->
+			<p id="verifyCode">
+				<span class="right">
+					<input id="confirmPublish" type="button" name="getCode" 
+					value="确认发布" onclick="submitPublish()"/>
+				</span>
+			</p>
+		</form>
+	</div>
+
+
+	
+	<footer>
+		<div class="wrapper footer">
+			<ul>
+				<li class="links">
+					<ul>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Policy</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</li>
+
+				<li class="links">
+					<ul>
+						<li><a href="#">Appartements</a></li>
+						<li><a href="#">Houses</a></li>
+						<li><a href="#">Villas</a></li>
+						<li><a href="#">Mansions</a></li>
+						<li><a href="#">...</a></li>
+					</ul>
+				</li>
+
+				<li class="links">
+					<ul>
+						<li><a href="#">New York</a></li>
+						<li><a href="#">Los Anglos</a></li>
+						<li><a href="#">Miami</a></li>
+						<li><a href="#">Washington</a></li>
+						<li><a href="#">...</a></li>
+					</ul>
+				</li>
+
+				<li class="about">
+					<p>La Casa is real estate minimal html5 website template, designed and coded by pixelhint, tellus varius, dictum erat vel, maximus tellus. Sed vitae auctor ipsum</p>
+					<ul>
+						<li><a href="http://facebook.com/pixelhint" class="facebook" target="_blank"></a></li>
+						<li><a href="http://twitter.com/pixelhint" class="twitter" target="_blank"></a></li>
+						<li><a href="http://plus.google.com/+Pixelhint" class="google" target="_blank"></a></li>
+						<li><a href="#" class="skype"></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="copyrights wrapper">
+			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
+		</div>
+	</footer><!--  end footer  -->
+	
+</body>
+</html>

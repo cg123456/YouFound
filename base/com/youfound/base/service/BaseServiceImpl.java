@@ -19,7 +19,8 @@ public class BaseServiceImpl<O extends BaseObject> implements BaseService<O> {
 	private BaseDao<O> dao;
 	private Logger logger;
 	public BaseServiceImpl(BaseDao<O> dao){
-		this.setDao(dao);
+		this.dao=dao;
+		@SuppressWarnings("unchecked")
 		Class<O> oType = GenericsUtil.getSuperClassGenricType(getClass());
 		logger = Logger.getLogger(oType.getSimpleName()+"ServiceImpl");
 	}

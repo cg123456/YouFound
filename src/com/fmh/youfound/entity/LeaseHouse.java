@@ -1,6 +1,9 @@
 package com.fmh.youfound.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.soufang.leasehouse.entity.AgentIDList;
 import com.soufang.leasehouse.entity.CommentList;
@@ -12,12 +15,14 @@ import com.youfound.base.entity.BaseObject;
 * @date 创建时间：2016年3月13日 上午2:23:05 
 * @version 1.0 
 */
-@Entity
+//@Entity
 public class LeaseHouse extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String sourceId;
 	
 	private String titleImage;		//标题图片路径
@@ -61,7 +66,7 @@ public class LeaseHouse extends BaseObject {
 	private String phone400;		//4008903341转196082
 	private String ownerName;		//户主姓名
 	private String ownerPhone400;
-	private AgentIDList agentIDList;
+	//private AgentIDList agentIDList;
 	
 	private String isFiredHouse;	//是否解除租赁？
 	private String linkurl;
@@ -72,14 +77,14 @@ public class LeaseHouse extends BaseObject {
 	private String subwayStation;	//地铁站
 	private String subwayDistance;	//距离
 	
-	private CommentList commentList;
-	private CommentListNew commentListNew;
+	//private CommentList commentList;
+	//private CommentListNew commentListNew;
 	
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getSourceId() {
@@ -268,12 +273,7 @@ public class LeaseHouse extends BaseObject {
 	public void setOwnerPhone400(String ownerPhone400) {
 		this.ownerPhone400 = ownerPhone400;
 	}
-	public AgentIDList getAgentIDList() {
-		return agentIDList;
-	}
-	public void setAgentIDList(AgentIDList agentIDList) {
-		this.agentIDList = agentIDList;
-	}
+	
 	public String getIsFiredHouse() {
 		return isFiredHouse;
 	}
@@ -316,6 +316,12 @@ public class LeaseHouse extends BaseObject {
 	public void setSubwayDistance(String subwayDistance) {
 		this.subwayDistance = subwayDistance;
 	}
+	/*public AgentIDList getAgentIDList() {
+		return agentIDList;
+	}
+	public void setAgentIDList(AgentIDList agentIDList) {
+		this.agentIDList = agentIDList;
+	}
 	public CommentList getCommentList() {
 		return commentList;
 	}
@@ -327,7 +333,7 @@ public class LeaseHouse extends BaseObject {
 	}
 	public void setCommentListNew(CommentListNew commentListNew) {
 		this.commentListNew = commentListNew;
-	}
+	}*/
 	
 	
 }

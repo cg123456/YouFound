@@ -52,6 +52,11 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- <prop key="current_session_context_class">thread</prop> -->
+				<!-- 使用spring的声明式事务管理的默认配置，配置为thread需要自己开启事务 -->
+				<prop key="hibernate.current_session_context_class">
+					org.springframework.orm.hibernate4.SpringSessionContext
+				</prop>
 			</props>
 		</property>
 		<property name="packagesToScan">
@@ -83,8 +88,11 @@
 		Write operations are not allowed in read-only mode (FlushMode.MANUAL): 
 		Turn your Session into FlushMode.COMMIT/AUTO or remove 'readOnly' 
 		marker from transaction definition. -->
+	<!-- 解决上述问题，因为事务的原因，用一下方法也解决
+	<aop:pointcut expression="execution(public * com.fmh.youfound.service.*.*(..))" 
+	改为：<aop:pointcut expression="execution(public * com.fmh.youfound.*.*.*(..))"-->
 	<aop:config>
-		<aop:pointcut expression="execution(public * com.fmh.youfound.service.*.*(..))"
+		<aop:pointcut expression="execution(public * com.fmh.youfound.*.*.*(..))"
 			id="businessService" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" />
 	</aop:config>

@@ -1,0 +1,123 @@
+1.@Resource 和@Autowired区别：
+	都可以写在字段和setter方法上，如果写在字段上就不用setter方法
+	@Resource是javax.annotation包下的，是java J2EE提供的，它默认以名字name来寻找bean来注入。也可以使用byType注入
+		1)Resource装配顺序：同时指定了name和type,则从spring上下问找到唯一的bean进行装配，找不到则抛出异常；如果指定了name
+		  则从上下文中找到对应名称的bean(id)进行装配；如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或者找到多个都会抛出异常；
+		  如果既没有指定name也没有指定type，则自动按照byname的方式进行装配
+		  
+		2)最好是将@Resourse放在setter方法上，这样更符合面向对象的方法,通过set，get的方法去操作属性，而不是直接操作对象	
+		
+		3)@Resource的作用相当于@Autowired,只不过通过@Autowired按照byType的类型自动注入
+	
+	@Autowired是spring提供的注解，默认by type装配依赖对象(来注入bean)
+		如果@Autowired想使用名字来指定bean，那么可以结合@Qualifier("beanname")来使用
+		public static TestServiceImpl {
+			@Autowried
+			@Qualifier("userDao")
+			private UserDao userDao;
+		}
+		
+		
+2.@Component和@Controller,@Service,@Repository区别：
+	spring文档原话:
+	The @Repository annotation is a marker for any class that fulfills the role or stereotype of 
+	a repository (also known as Data Access Object or DAO). 
+	Spring provides further stereotype annotations: @Component, @Service, and @Controller. @Component 
+	is a generic stereotype for any Spring-managed component. @Repository, @Service, and @Controller 
+	are specializations of @Component for more specific use cases, for example, in the persistence, 
+	service, and presentation layers, respectively. Therefore, you can annotate your component classes 
+	with @Component, but by annotating them with @Repository, @Service, or @Controller instead, 
+	your classes are more properly suited for processing by tools or associating with aspects. 
+	For example, these stereotype annotations make ideal targets for pointcuts. It is also possible 
+	that @Repository, @Service, and @Controller may carry additional semantics in future releases of 
+	the Spring Framework. Thus, if you are choosing between using @Component or @Service for your service 
+	layer, @Service is clearly the better choice. Similarly, as stated above, @Repository is already 
+	supported as a marker for automatic exception translation in your persistence layer.
+	
+	
+3. GernericsUtil，利用反射机制，获得定义Class时声明的父类的范型参数的类型。
+	如：public BookManager extends GenricManager<Book>
+	在本项目中，使用的情形是这样的：
+	1)为所有的DAO和Service层的类提供一个基类接口和实现类：BaseDao/BaseDaoImpl 和 ServiceDao/ServiceDaoImpl，
+	比如像一些基本的Dao操作，只要子类DAO(如UserDao)继承了BaseDaoImpl就能够实现代码重用，而子类DAO(如UserDao)也可以实现自己的接口，
+	来实现自己特有的逻辑。Service层也是类似。
+	2)BaseDao定义：public interface BaseDao<O> {//声明的方法}，O的作用是一种泛型，指明具体要实现的那个实体Object的DAO；
+	BaseDaoImpl是这样定义的：(为什么这样定义，下面解释)
+	public class BaseDaoImpl<O extends BaseObject> implements BaseDao<O> {
+		protected Class<O> oType;
+		private Logger logger;
+
+		@SuppressWarnings("unchecked")
+		public BaseDaoImpl() {
+			//使用反射获取定义时的类型
+			this.oType = GenericsUtil.getSuperClassGenricType(getClass());
+			this.logger = Logger.getLogger(oType);
+		}
+	}
+	(需要进行DAO操作的实体类都要继承这个类BaseObject，这个类继承了Serializaed类；)
+	那么在实现一个具体的DAO，如UserDaoImpl时：BaseDaoImpl需要指明实体类User
+	@Repository(value="userDaoImpl")
+	public class UserDaoImpl<O> extends BaseDaoImpl<User> implements UserDao {
+		
+	}
+	只需要如上定义，就能具备最基本的UserDaoImpl的bean,初始化UserDaoImpl时，调用的是父类的BaseDaoImpl方法，
+	getClass()会获取到UserDaoImpl类的完整路径和类名，而通过调用GenericsUtil.getSuperClassGenricType(getClass())
+	就可以获取到定义UserDaoImpl时父类声明的泛型类型，即BaseDaoImpl<User>中的User这个类型，所以就可以得到oType的类型为User；
+	这样有什么用处呢？作用在这句：this.logger = Logger.getLogger(oType);
+	原来如此，费了这么大功夫就是为了记录日志logger啊。对，就是为了记录实体类User的DAO操作日志，但是这里将logger定义在了父类中，实现了代码重用，
+	而且能够根据子类定义时父类指定的泛型类型来确定logger的记录的类的日志。很巧妙地利用了java反射机制、java的动态性特征。
+	
+	类似的，Servivice也有类似的运用，此时的泛型是BaseDao类，具体请参见项目源码。
+	
+	
+4.使用GenericsUtil时发生的错误：
+	由于在构造方法中这句this.oType = GenericsUtil.getSuperClassGenricType(getClass());	
+	将getClass()写成了oType,运行时，一种发生null指针错误:NullPointerException,但是却debug了很久都没能发现问题所在，
+	以为是getSuperClassGenricType()内部问题，因为报错一直到了GenericsUtil类的方法。以为是返回null时报错。
+	在这里总结一下，发生NullPointerException应该是方法参数使用了null对象，而抛出的异常，并不是返回了null对象。
+	
+	
+	
+5.遇到的问题spring、hibernate、项目（2016-05-29）
+	0）使用sessionFactory时报错：Could not obtain transaction-synchronized Session for current thread
+	简介：openSession每次打开都是新的Session,所以多次获取的Session实例是不同的，并且需要人为的调用close方法进行Session关闭；
+   	getCurrentSession是从当前上下文中获取Session并且会绑定到当前线程，第一次调用时会创建一个Session实例，如果该Session未关闭，
+   	后续多次获取的是同一个Session实例；事务提交或者回滚时会自动关闭Sesison,无需人工关闭。
+	
+	网上说的方法是在dao层加上@Transational注解，但是本项目的使用的sessionFactory实在一个基类的DAO：BaseDaoimpl中，
+	在这个dao中加上@Transactional就会报错。
+	
+	后来用1）中的第二个方法解决了。
+	
+	1）<!-- 因为将aop:config注释掉了，使用注解的方式运行时报错：
+		Write operations are not allowed in read-only mode (FlushMode.MANUAL): 
+		Turn your Session into FlushMode.COMMIT/AUTO or remove 'readOnly' 
+		marker from transaction definition. -->
+	<!-- 报上面的错误还有其他原因，就是今天遇到的，是因为执行hibernateTemplate时事务的原因，用一下方法也解决
+	<aop:pointcut expression="execution(public * com.fmh.youfound.service.*.*(..))" 
+	改为：<aop:pointcut expression="execution(public * com.fmh.youfound.*.*.*(..))"-->
+	
+	2）使用hibernate保存一个新对象时，报错Field 'id' doesn't have a default value
+	            字面意思数据库ID没有一个默认值，原因是数据库的ID没有使用自增长
+		我们在使用hibernate建立model时，注解模式的简单使用方法为
+		@Id
+		@GeneratedValue()
+		这里所使用的是数据库的自增长
+		so建表时也一定要记得设置自增长
+		当然如果使用hibernate自建数据库 是会设置ID字段自增长的
+	而ZY发生错误的原因是，使用没有添加@GeneratedValue()时的PublishLeaseHouse类建立了表，bean-config配置：
+	<prop key="hibernate.hbm2ddl.auto">update</prop>
+	然后后来在PublishLeaseHouse类中添加了@Id和@GeneratedValue的注解，使用没有设置id auto_increase的数据表
+	来保存id自动增长的对象，就会报这样的错。
+	
+	3）保存对象时报错：org.hibernate.TransientObjectException: object references an unsaved transient instance
+	这主要是在ManyToOne级联操作时遇到,比如new了一个新对象，在未保存之前将它保存进了一个新new的对象（也即不是持久态）。
+	解决办法是在保存或更新之前把这个对象查出来（这样就是一个持久态）。
+	解决办法是将many-to-one的级联设为: cascade="save-update,persist"
+	
+	
+	
+	
+	
+	
+	

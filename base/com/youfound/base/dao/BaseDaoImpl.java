@@ -6,8 +6,12 @@ import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fmh.youfound.entity.User;
 import com.youfound.base.entity.BaseObject;
@@ -25,16 +29,13 @@ public class BaseDaoImpl<O extends BaseObject> implements BaseDao<O> {
 	private Logger logger;
 	
 	private SessionFactory sessionFactory;
-	
-	public BaseDaoImpl(Class<O> oType) {
-		this.oType = oType;
-		logger = Logger.getLogger(oType.getSimpleName()+"DAOImpl");
-	}
+	private HibernateTemplate hibernateTemplate;	
+
 	
 	@SuppressWarnings("unchecked")
 	public BaseDaoImpl() {
 		//使用反射获取定义时的类型
-		this.oType = GenericsUtil.getSuperClassGenricType(oType);
+		this.oType = GenericsUtil.getSuperClassGenricType(getClass());
 		this.logger = Logger.getLogger(oType);
 	}
 
@@ -45,6 +46,20 @@ public class BaseDaoImpl<O extends BaseObject> implements BaseDao<O> {
 	@Resource(name="sessionFactory")
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+	}
+	
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+
+	@Resource(name="hibernateTemplate")  
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+	
+	public BaseDaoImpl(Class<O> oType) {
+		this.oType = oType;
+		logger = Logger.getLogger(oType.getSimpleName()+"DAOImpl");
 	}
 	
 	public void log(long startTime) {
@@ -68,6 +83,8 @@ public class BaseDaoImpl<O extends BaseObject> implements BaseDao<O> {
 	@Override
 	public void save(Object obj) {
 		sessionFactory.getCurrentSession().save(obj);
+		//hibernateTemplate.save(obj);
+		
 	}
 
 	@Override

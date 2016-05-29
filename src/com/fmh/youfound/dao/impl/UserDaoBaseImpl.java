@@ -15,10 +15,11 @@ import com.youfound.base.util.query.CriteriaQuery;
  * @version 1.0  
  */
 @Repository(value="userDaoBaseImpl")
-public class UserDaoBaseImpl<O> extends BaseDaoImpl<User>{
+public class UserDaoBaseImpl<O> extends BaseDaoImpl<User>
+		implements UserDaoNew {
 
 
-	/*@Override
+	@Override
 	public User findByUserName(String userName) {
 		CriteriaQuery cq = new CriteriaQuery(User.class, this.getSessionFactory().getCurrentSession());
 		cq.eq("userName", userName);	//字段名要和声明的类的属性名一样
@@ -49,6 +50,6 @@ public class UserDaoBaseImpl<O> extends BaseDaoImpl<User>{
 			return null;
 		}
 		return (User)list.get(0);
-	}*/
+	}
 
 }

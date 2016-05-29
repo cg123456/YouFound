@@ -1,6 +1,8 @@
 package com.fmh.youfound.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -22,11 +24,11 @@ import com.fmh.youfound.service.UserService;
  * @version 1.0  
  */
 
-@RequestMapping("/leaseHouse")
 @Controller
+@RequestMapping("/leaseHouse/*")
 public class LeaseHouseController {
 
-	//@Resource(name="leaseHouseServiceImpl")
+	@Resource(name="leaseHouseServiceImpl")
 	private LeaseHouseService leaseHouseService;
 
 	public LeaseHouseService getLeaseHouseService() {
@@ -44,15 +46,31 @@ public class LeaseHouseController {
 		return userDao;
 	}
 
-	//@Resource(name="userDaoImpl")
+	@Resource(name="userDaoHTImpl")
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
 	
+	@RequestMapping(params="method=test")
 	public String showUsers(ModelMap map) {
 		List<User> list = userDao.findAll();
 		map.addAllAttributes(list);
 		return "/showUserTest";
+	}
+	
+	@RequestMapping(value="/show.do")
+	public ModelAndView show(HttpServletRequest req) {
+		System.out.println("执行了此方法！！！！！！！！！");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/showUserTest");
+		List<User> list = userDao.findAll();
+		Map<String, User> map = new HashMap<String, User>();
+		for(int i=0;i<list.size();i++) {
+			map.put("user"+i, list.get(i));
+			System.out.println("Username"+i+list.get(i).getUserName());
+		}
+		mv.addAllObjects(map);
+		return mv;
 	}
 	
 	

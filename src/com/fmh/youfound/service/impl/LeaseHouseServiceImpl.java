@@ -19,7 +19,7 @@ public class LeaseHouseServiceImpl extends BaseServiceImpl<LeaseHouse>
 		implements LeaseHouseService {
 	
 	@Autowired(required = true)
-	public LeaseHouseServiceImpl(@Qualifier(value="leaseHouseDao")BaseDao<LeaseHouse> dao) {
+	public LeaseHouseServiceImpl(@Qualifier("leaseHouseDaoImpl")BaseDao<LeaseHouse> dao) {
 		super(dao);
 	}
 

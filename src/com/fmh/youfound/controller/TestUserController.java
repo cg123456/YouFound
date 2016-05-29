@@ -17,7 +17,7 @@ import com.fmh.youfound.service.UserService;
 * @date 创建时间：2016年4月2日 下午11:07:26 
 * @version 1.0 
 */
-@Controller
+//@Controller
 @RequestMapping("/test.do")
 public class TestUserController {
 	

@@ -1,6 +1,7 @@
 package com.fmh.youfound.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /** 
@@ -11,7 +12,9 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 	
-	private String id;
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String city;
 	private String district;		//城市的区：天河区，越秀区
 	private String comArea;			//地段：如大学城，珠江新城
@@ -25,12 +28,11 @@ public class Address {
 		
 	}
 
-	@Id
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -80,6 +82,14 @@ public class Address {
 
 	public void setCoordy(String coordy) {
 		this.coordy = coordy;
+	}
+
+	public String getCommunity() {
+		return community;
+	}
+
+	public void setCommunity(String community) {
+		this.community = community;
 	}
 
 }

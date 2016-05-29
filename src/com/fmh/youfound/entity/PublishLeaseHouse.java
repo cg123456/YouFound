@@ -4,8 +4,15 @@ import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import javax.persistence.CascadeType;
+
+import com.youfound.base.entity.BaseObject;
 
 /** 
  * @author fengmuhai
@@ -13,19 +20,35 @@ import javax.persistence.OneToOne;
  * @version 1.0  
  */
 @Entity
-public class PublishLeaseHouse {
+public class PublishLeaseHouse extends BaseObject {
 
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * JPA提供的四种标准用法为TABLE,SEQUENCE,IDENTITY,AUTO. 
+	 * TABLE：使用一个特定的数据库表格来保存主键。 
+	 * SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列。 
+	 * IDENTITY：主键由数据库自动生成（主要是自动增长型） 
+	 * AUTO：主键由程序控制。 
+	 */
 	@Id
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 		
 	private String purpose;			//用途：住宅，别墅，写字楼，商铺等
 	private String leaseType;		//出租类型，整租，月租，合租，短租等
 	private String housingEstate;	//小区
-	//@OneToOne
-	//private Address address;、		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
-									//哪个城市，哪个区/商圈,哪个小区
 	
-	//private HouseType houseType;	//户型
+	//多对一单向关联
+	@ManyToOne(cascade= {CascadeType.ALL, CascadeType.PERSIST})
+	@JoinColumn(name="addressID")
+	private Address address;		//房屋所在城市信息不需要再添加房源时写入，因为当用户登入的时候已经默认选择了城市
+									//哪个城市，哪个区/商圈,哪个小区
+	//多对一单向关联
+	@ManyToOne(cascade= {CascadeType.ALL, CascadeType.PERSIST})
+	@JoinColumn(name="houseTypeID")
+	private HouseType houseType;	//户型
 	private String buildArea;		//建筑面积
 	private String fitment;			//装修类型：豪华装修，精装修，中等装修，简装修，毛坯房
 	
@@ -185,6 +208,28 @@ public class PublishLeaseHouse {
 	}
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public HouseType getHouseType() {
+		return houseType;
+	}
+	public void setHouseType(HouseType houseType) {
+		this.houseType = houseType;
+	}
+	@Override
+	public String toString() {
+		return "PublishLeaseHouse [id=" + id + ", purpose=" + purpose + ", leaseType=" + leaseType + ", housingEstate="
+				+ housingEstate + ", address=" + address + ", houseType=" + houseType + ", buildArea=" + buildArea
+				+ ", fitment=" + fitment + ", floor=" + floor + ", totalFloor=" + totalFloor + ", floorPosition="
+				+ floorPosition + ", faceTo=" + faceTo + ", buildingNo=" + buildingNo + ", price=" + price
+				+ ", priceType=" + priceType + ", payDetail=" + payDetail + ", equipment=" + equipment + ", houseTitle="
+				+ houseTitle + ", description=" + description + ", publishImages=" + publishImages + ", checkInDate="
+				+ checkInDate + ", contactPerson=" + contactPerson + ", contactNumber=" + contactNumber + "]";
 	}
 	
 	

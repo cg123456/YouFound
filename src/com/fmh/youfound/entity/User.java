@@ -19,7 +19,7 @@ public class User extends BaseObject {
 	
 	private static final long serialVersionUID = 1L;
 
-	public Long id;
+	private Long id;
 	
 	/**
 	 * 注册时需要的信息

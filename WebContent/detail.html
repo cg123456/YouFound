@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>La Casa - Real Estate HTML5 Home Page Template</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/search.css">
+	
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<!-- 城市定位 -->
+	<script language="javascript" type="text/javascript" 
+	src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<script language="javascript" type="text/javascript" >
+		
+		jQuery(function($){
+			var city = remote_ip_info.city;
+            var insert = $("#city");
+            insert.html(city + "[切换]" );
+        });
+	</script>
+</head>
+<body>
+	<header  style="background-color:#333;">
+		<div class="wrapper">
+			<a href="index.html"
+				style="font-size: 32px; text-decoration: none; line-height: 60px; color: rgb(255, 223, 77);">优房网</a>
+			<a id="city" href="#"
+				style="font-size: 12px; color: #ddd; text-decoration: none;"></a>
+			<nav>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">租房</a></li>
+					<li><a href="#">新房</a></li>
+					<li><a href="signin.html">登入</a></li>
+					<li><a href="emailSignup.html">注册</a></li>
+					<!-- <li><a href="#">Contact</a>
+						</li> -->
+				</ul>
+				<!-- <a href="signin.html" class="login_btn">注册</a> -->
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+			</nav>
+		</div>
+	</header>
+
+	<div id="search_land">
+		<div id="search">
+			<!-- <img src="images/search.png"></img> -->
+			<div id="search_button" onclick="search()">
+				搜索
+			</div>
+			<form id="search_form" action="search.action">
+				<input name="searchFor" type="text" size="18" style="color: gray"
+					value="请输入地段、小区或者房型"
+					onfocus="if (value =='请输入地段、小区或者房型'){value =''}"
+					onblur="if (value ==''){value='请输入地段、小区或者房型'}" />
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	<footer>
+		<div class="wrapper footer">
+			<ul>
+				<li class="links">
+					<ul>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Policy</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</li>
+
+				<li class="links">
+					<ul>
+						<li><a href="#">Appartements</a></li>
+						<li><a href="#">Houses</a></li>
+						<li><a href="#">Villas</a></li>
+						<li><a href="#">Mansions</a></li>
+						<li><a href="#">...</a></li>
+					</ul>
+				</li>
+
+				<li class="links">
+					<ul>
+						<li><a href="#">New York</a></li>
+						<li><a href="#">Los Anglos</a></li>
+						<li><a href="#">Miami</a></li>
+						<li><a href="#">Washington</a></li>
+						<li><a href="#">...</a></li>
+					</ul>
+				</li>
+
+				<li class="about">
+					<p>La Casa is real estate minimal html5 website template, designed and coded by pixelhint, tellus varius, dictum erat vel, maximus tellus. Sed vitae auctor ipsum</p>
+					<ul>
+						<li><a href="http://facebook.com/pixelhint" class="facebook" target="_blank"></a></li>
+						<li><a href="http://twitter.com/pixelhint" class="twitter" target="_blank"></a></li>
+						<li><a href="http://plus.google.com/+Pixelhint" class="google" target="_blank"></a></li>
+						<li><a href="#" class="skype"></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="copyrights wrapper">
+			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
+		</div>
+	</footer><!--  end footer  -->
+	
+</body>
+</html>

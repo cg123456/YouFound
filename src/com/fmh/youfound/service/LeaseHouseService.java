@@ -8,7 +8,7 @@ import com.youfound.base.service.BaseService;
  * @date 2016-5-17 上午11:22:26 
  * @version 1.0  
  */
-public interface LeaseHouseService extends BaseService<LeaseHouse> {
+public interface LeaseHouseService {
 
 	
 }
