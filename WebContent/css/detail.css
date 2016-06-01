@@ -24,13 +24,28 @@
 .detail {
 	width:100%;
 	min-height:1000px;
-	background-color:blue;
+	/* background-color:blue; */
 }
 
 .brief {
 	width:80%;
-	min-height:500px;
+	min-height:520px;
 	margin-left:auto;
 	margin-right:auto;
-	background-color:red;
+	/* background-color:red; */
 }
+
+.brief .title {
+	width:100%;
+	min-height:70px;
+	background-color:green;
+}
+
+.brief .showimg {
+	width:45%;
+	min-height:450px;
+	background-color:none;
+	float:left;
+}
+
+

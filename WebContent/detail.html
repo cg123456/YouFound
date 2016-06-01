@@ -7,12 +7,18 @@
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/detail.css">
+	<link rel="stylesheet" type="text/css" href="css/showimg.css">
 	
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/showimg/base.js"></script>
+	<script type="text/javascript" src="js/showimg/showimg.js"></script>
+	<SCRIPT src="js/showimg/lib.js" type=text/javascript></SCRIPT>
+	<SCRIPT src="js/showimg/163css.js" type=text/javascript></SCRIPT>
+	
+	
 	<!-- 城市定位 -->
 	<script language="javascript" type="text/javascript" 
 	src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
@@ -65,7 +71,41 @@
 	
 	
 	<div class="detail">
-		<div class="brief"></div>
+		<div class="brief">
+			<p class="title"></p>
+			<div class="showimg">
+				<div class=jqzoom id=spec-n1
+					onClick="window.open('http://www.16sucai.com/')">
+					<IMG height=350 src="img/showimg/img04.jpg"
+						jqimg="img/showimg/img04.jpg" width=450>
+				</div>
+				<div id=spec-n5>
+					<div class=control id=spec-left>
+						<img class="left" src="img/showimg/left.gif" />
+					</div>
+					<div id=spec-list>
+						<ul class=list-h>
+							<li><img src="img/showimg/img01.jpg"></li>
+							<li><img src="img/showimg/img02.jpg"></li>
+							<li><img src="img/showimg/img03.jpg"></li>
+							<li><img src="img/showimg/img04.jpg"></li>
+							<li><img src="img/showimg/img01.jpg"></li>
+							<li><img src="img/showimg/img02.jpg"></li>
+							<li><img src="img/showimg/img03.jpg"></li>
+							<li><img src="img/showimg/img04.jpg"></li>
+							<li><img src="img/showimg/img01.jpg"></li>
+							<li><img src="img/showimg/img02.jpg"></li>
+							<li><img src="img/showimg/img03.jpg"></li>
+							<li><img src="img/showimg/img04.jpg"></li>
+						</ul>
+					</div>
+					<div class=control id=spec-right>
+						<img src="img/showimg/right.gif" />
+					</div>
+
+				</div>
+			</div>
+		</div>
 	</div>
 	
 	
