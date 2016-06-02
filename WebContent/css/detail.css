@@ -37,15 +37,83 @@
 
 .brief .title {
 	width:100%;
-	min-height:70px;
-	background-color:green;
+	min-height:60px;
 }
 
 .brief .showimg {
-	width:45%;
+	width:44%;
 	min-height:450px;
 	background-color:none;
 	float:left;
 }
+
+.brief .information {
+	width:56%;
+	min-height:450px;
+	/* display:inline-block; */
+	/* background-color:blue; */
+	float:right;
+}
+
+.information p {
+	width: 100%;
+	min-height:60px;/* 
+	background-color:green; */
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
+}
+
+.information p label {
+	line-height:60px;
+	color:#666;
+	/* font-weight:bold; */
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
+}
+
+.information p .boldText {
+	line-height:60px;
+	left:10px;
+	color:rgb(255,102,0);
+	font-size:28px;
+	font-weigth:bold;
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
+}
+
+.information p #payType {
+	line-height:60px;
+	left:20px;
+	color:#222;
+	font-size:16px;
+}
+
+.information p #payDetail {
+	line-height:60px;
+	left:20px;
+	color:#222;
+	font-size:16px;
+}
+
+
+.information p span {
+	width: 16%;
+	height: 36px;
+	margin: 17px 10px;
+	/* float:left; */
+	line-height: 36px; /*单行文字居中*/
+	color:#222;
+	font-size:18px;
+	font-weigth:bold;
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
+}
+
+.information p span a {
+	color:#000;
+	text-decoration: none;
+}
+
+.information p span a:hover {
+	color: rgb(255,102,0);
+	text-decoration: underline;
+}
+
 
 
