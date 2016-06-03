@@ -18,6 +18,8 @@
 	<SCRIPT src="js/showimg/lib.js" type=text/javascript></SCRIPT>
 	<SCRIPT src="js/showimg/163css.js" type=text/javascript></SCRIPT>
 	
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cd73b4c03223ddc97b49b9f72b09afc5"></script>
+	
 	
 	<!-- 城市定位 -->
 	<script language="javascript" type="text/javascript" 
@@ -28,7 +30,42 @@
 			var city = remote_ip_info.city;
             var insert = $("#city");
             insert.html(city + "[切换]" );
+            
+            initHouseDetail();
+            /* initMap(0,0); */
         });
+        
+        function initHouseDetail() {
+        	//查询数据库，拿到数据对象
+        	
+        	$("#houseTitle").html("百苑花园小区精装修三方一厅");
+        	$("#price").html("5400");
+        	$("#houseType").html("三室一厅");
+        	$("#buildArea").html("59平米");
+        	$("#floor").html("2/12层");
+        	$("#faceTo").html("向北");
+        	$("#fitment").html("中等装修");
+        	
+			$("#community").html("百苑花园小区");
+			$("#district").html("白云区");
+			$("#comArea").html("新市");
+			
+			$("#address").html("白云花园路12号");
+			$("#phoneNumber").html("15626174988");
+			$("#contactPerson").html("冯先生");
+        }
+        
+        function initMap(var pox, var poy) {
+        	var map = new AMap.Map('container',{
+        	zoom: 10,
+        	center: [113.41069793701172,23.04681396484375]
+    		});
+   			var marker = new AMap.Marker({
+        	position: [113.41069793701172, 23.04681396484375],
+        	map:map
+    		});
+        }
+        
 	</script>
 </head>
 <body>
@@ -72,11 +109,11 @@
 	
 	<div class="detail">
 		<div class="brief">
-			<p class="title"></p>
+			<p class="title" id="houseTitle"></p>
 			<div class="showimg">
 				<div class=jqzoom id=spec-n1
-					onClick="window.open('http://www.16sucai.com/')">
-					<IMG height=350 src="img/showimg/img04.jpg"
+				onClick="window.open('http://www.16sucai.com/')">
+					<IMG id="firstImg" height=350 src="img/showimg/img04.jpg"
 						jqimg="img/showimg/img04.jpg" width=450>
 				</div>
 				<div id=spec-n5>
@@ -84,7 +121,7 @@
 						<img class="left" src="img/showimg/left.gif" />
 					</div>
 					<div id=spec-list>
-						<ul class=list-h>
+						<ul class=list-h id="pic-list">
 							<li><img src="img/showimg/img01.jpg"></li>
 							<li><img src="img/showimg/img02.jpg"></li>
 							<li><img src="img/showimg/img03.jpg"></li>
@@ -114,40 +151,75 @@
 						<a id="payType">元/月</a>
 						<a id="payDetail">[押一付二]</a>
 					</p>
-					<p id="rent">
+					<p id="houseBrief">
 						<label>房屋概况&nbsp;:</label>
-						<span>二室一厅</span>
-						<span>50平米</span>
-						<span>5/15层</span>
-						<span>向南</span>
-						<span>精装修</span>
+						<span id="houseType">二室一厅</span>
+						<span id="buildArea">50平米</span>
+						<span id="floor">5/15层</span>
+						<span id="faceTo">向南</span>
+						<span id="fitment">精装修</span>
 					</p>
-					<p id="rent" style="background-color:">
+					<p id="area" style="background-color:">
 						<label>小&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;区&nbsp;:&nbsp;</label>
-						<span><a href="#">雅乐居花园花园花园</a></span>
-						<span>[<a href="#">番禺区</a>/
-						<a href="#">大学城</a>]</span>
+						<span><a id="community" href="#">雅乐居花园</a></span>
+						<span>[<a id="district" href="#">番禺区</a>/
+						<a id="comArea" href="#">大学城</a>]</span>
 					</p>
-					<p id="rent">
+					<p >
 						<label>地&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;址&nbsp;:</label>
-						<span>南村镇兴南大道398号</span>
+						<span id="address">南村镇兴南大道398号</span>
 					</p>
-					<p id="rent" style="background-color:">
+					<p id="contact" style="background-color:">
 						<label>联系方式&nbsp;:</label>
 						<span><a id="phoneNumber" class="boldText">13800138000</a></span>
-						<span>陈先生</span>
+						<span id="contactPerson">陈先生</span>
 					</p>
-					<p id="rent">
+					<p id="none">
 					</p>
 					<p id="rent">
 						<span>分享</span>
 						<span>收藏</span>
-						<span>举报</span>
+						<span>举sdaffsafd报</span>
 					</p>
 					
 				</div>
+		</div>
+		<div class="descript">
+			<div class="title" style="border-bottom:1px solid #DDD;">
+				<span style="border-bottom:2px solid rgb(255,102,0);">房源描述</span>
+			</div>
+			<div class="sourceDes">
+				<span>可变长度域对可变长数据元的说明：对任何最大长度小于100个字符的可变长度数据元，
+				两个附加位位于该数据元之前，标明其后所跟数据元的长度。其格式表示为LLVAR。对任何最大长度小于1000个字符的可变长度数据元，
+				三个附加位位于该数据元之前，标明其后所跟数据元的长度。其格式表示为LLLVAR。</span>
+			</div>
+		</div>
+		<div class="images">
+			<div class="title" style="border-bottom:1px solid #DDD;">
+				<span style="border-bottom:2px solid rgb(255,102,0);">房源图片</span>
+			</div>
+			<img src="img/showimg/img01.jpg">
+			<img src="img/showimg/img02.jpg">
+			<img src="img/showimg/img03.jpg">
+			<img src="img/showimg/img04.jpg">
+		</div>
+		<div class="m">
+			<div class="title" style="border-bottom:1px solid #DDD;">
+				<span style="border-bottom:2px solid rgb(255,102,0);">房源地图</span>
+			</div>
+			<div id="container"></div>
+			<script type="text/javascript">
+				var map = new AMap.Map('container',{
+      			    zoom: 10,
+        			center: [113.41069793701172,23.04681396484375]
+    			});
+   				var marker = new AMap.Marker({
+      			    position: [113.41069793701172, 23.04681396484375],
+       			    map:map
+    			});
+			</script>
 		</div>
 	</div>
 	

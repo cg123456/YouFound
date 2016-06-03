@@ -7,12 +7,13 @@
 	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-	<link rel="stylesheet" type="text/css" href="css/search.css">
-	<link rel="stylesheet" type="text/css" href="css/publish.css">
+	<link rel="stylesheet" type="text/css" href="css/userManager.css">
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/showimg/base.js"></script>
+	
+	
 	<!-- 城市定位 -->
 	<script language="javascript" type="text/javascript" 
 	src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
@@ -22,202 +23,9 @@
 			var city = remote_ip_info.city;
             var insert = $("#city");
             insert.html(city + "[切换]" );
-
-            //给表单city赋值
-            $("#formCity").val(city);
             
-            //给radio赋初始值
-            initChecked("#radio1","#inner1");
-            initChecked("#fitmentRadio2",null)
-            //给
         });
-		
-		$(document).ready(function() {
-			$(".radio").click(function(){
-				//alert($("input[name='type'][checked]").val()); 这种写法不行
-				//alert($('input[name="rentType"]:checked').val());
-				if($('input[name="rentType"]:checked').val()=="alone") {
-					rentTypeChecked("#inner1");
-					rentTypeUnchecked("#inner2");
-					rentTypeUnchecked("#inner3");
-					
-				} else if($('input[name="rentType"]:checked').val()=="share") {
-					rentTypeUnchecked("#inner1");
-					rentTypeChecked("#inner2");
-					rentTypeUnchecked("#inner3");
-					
-				} else {
-					rentTypeUnchecked("#inner1");
-					rentTypeUnchecked("#inner2");
-					rentTypeChecked("#inner3");
-				}
-				   
-				//$("input[name='radioName'][checked]").val();  取radio的值
-				//$("input[name='radioName'][value=2]").attr("checked",true);   给radio 赋值, 选中值为2的radio
-				});
-		});
-		
-		function rentTypeChecked(id) {
-			$(id).css("color","rgb(255,102,0)");
-			$(id).css("border","2px solid rgb(255,102,0)");
-		}
-		function rentTypeUnchecked(id) {
-			$(id).css("color","black");
-			$(id).css("border","2px solid #DDD");
-		}
-		
-		function initChecked(radioID, innerID) {
-			$(radioID).attr("checked",true);
-			rentTypeChecked(innerID);
-		}
-		
-		//提交表单
-		function submitPublish() {
-
-			if(verifyForm()) {
-				getCheckedboxValue();
-				document.getElementById('publishForm').submit();
-			}
-		}
-		
-		//获取复选框数据
-		function getCheckedboxValue() {
-			/*相当于js的document.getElementByName("")
-			var equipments = $("equipmentType"); */
-			
-			var checked_value =""; 
-			$('input[name="equipmentType"]:checked').each(function(){ 
-				checked_value += $(this).val()+"|"; 
-			});
-			if(checked_value!="") {
-				checked_value = checked_value.substring(0,checked_value.length-1);
-			}
-			$("#equipmentValue").val(checked_value);
-			//alert($("#equipmentValue").val());
-			
-			/* var chk_value =[]; 
-			$('input[name="equipmentType"]:checked').each(function(){ 
-			chk_value.push($(this).val()); 
-			}); 
-			alert(chk_value.length==0 ?'你还没有选择任何内容！':chk_value); */
-			
-		}
-		
-		//验证表单
-		function verifyForm() {
-			if($("#communityName").val().trim()==""){
-				alert("请输入小区名称");
-				return false;
-			}
-			
-			if($("#selectDistrict").val().trim()=="0") {
-				alert("请选择请选择区域");
-				return false;
-			}
-			if($("#selectComArea").val().trim()=="0") {
-				alert("请选择请选择商圈");
-				return false;
-			}
-			if($("#communityAddress").val().trim()=="") {
-				alert("请输入小区具体地址");
-				return false;
-			}
-			
-			if($("#roomNum").val().trim()=="") {
-				alert("请输入房间数");
-				return false;
-			}
-			if(isNaN($("#roomNum").val())) {
-				alert("房间（室）数只能输入数字");
-				return false;
-			}
-			if($("#hallNum").val().trim()=="") {
-				alert("请输入客厅数");
-				return false;
-			}
-			if(isNaN($("#hallNum").val())) {
-				alert("客厅（厅）数只能输入数字");
-				return false;
-			}
-			
-			
-			if($("#buildingArea").val().trim()=="") {
-				alert("请输入建筑面积");
-				return false;
-			}
-			if(isNaN($("#buildingArea").val())) {
-				alert("建筑面积只能输入数字");
-				return false;
-			}
-			
-			
-			if($("#direction").val().trim()=="0") {
-				alert("请选择请选择朝向");
-				return false;
-			}
-			
-			if($("#floorLocation").val().trim()=="") {
-				alert("请输入楼层位置");
-				return false;
-			}
-			if(isNaN($("#floorLocation").val())) {
-				alert("楼层位置只能输入数字");
-				return false;
-			}
-			if($("#floorTotal").val().trim()=="") {
-				alert("请输入楼层总数");
-				return false;
-			}
-			if(isNaN($("#floorTotal").val())) {
-				alert("楼层总数只能输入数字");
-				return false;
-			}
-			
-			
-			if($("#price").val().trim()=="") {
-				alert("请输入租金");
-				return false;
-			}
-			if(isNaN($("#price").val())) {
-				alert("租金只能输入数字");
-				return false;
-			}
-			if($("#payType").val().trim()=="0") {
-				alert("请选择请支付类型");
-				return false;
-			}
-			
-			
-			if($("#houseTitleContent").val().trim()=="") {
-				alert("请输入房源标题");
-				return false;
-			}
-			
-			if($("#comment").val().trim()=="") {
-				alert("请输入房源描述");
-				return false;
-			}
-			
-			
-			if($("#houseOwnerName").val().trim()=="") {
-				alert("请输入房主/联系人姓名");
-				return false;
-			}
-			
-			if($("#phoneNumberContent").val().trim()=="") {
-				alert("请输入房主/联系人手机号");
-				return false;
-			}
-			
-			if($("#verifyCodeContent").val().trim()=="") {
-				alert("请输入手机验证码");
-				return false;
-			}
-			
-			
-			return true;
-		}
-		
+        
 	</script>
 </head>
 <body>
@@ -238,37 +46,32 @@
 						</li> -->
 				</ul>
 				<!-- <a href="signin.html" class="login_btn">注册</a> -->
-				<a href="publish.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
 			</nav>
 		</div>
+		
+	</header>
+	<header  style="background-color:#DDD;">
+		<div class="wrapper">
+			<nav>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+				<a href="emailSignup.html" class="login_btn">发布房源</a>
+			</nav>
+		</div>
+		
 	</header>
 
-	<div class="publish">
+	<div class="frame">
 		<form id="publishForm" action="publish.do" method="post">
-			<h1>免费发布出租房源</h1>
-			<!-- 出租方式-->
-			<p id="leaseType" >
+			<p></p>
+			<!-- 用户名称 -->
+			<p id="username">
 				<span class="left">
-					<a>出租方式</a>
-					<a style="color:red">*</a>
-				</span>
-				<span class="right">
-					<span id="inner1" class="inner">
-					 	<input id="radio1" class="radio " type="radio" name="rentType" value="alone"/>整租
-					</span>
-					<span id="inner2" class="inner">
-					 	<input id="radio2" class="radio " type="radio" name="rentType" value="share"/>合租
-					</span>
-					<span id="inner3" class="inner">
-					 	<input id="radio3" class="radio " type="radio" name="rentType" value="short"/>短租
-					</span>
-				</span>
-			</p>
-			<!-- 小区名称 -->
-			<p id="communityTile">
-				<span class="left">
-					<a>小区名称</a>
-					<a style="color:red">*</a>
+					<a>用户名</a>
 				</span>
 				<span class="right">
 					<input id="communityName" class="textInput" 
@@ -278,13 +81,12 @@
 			<!-- 地址 -->
 			<p id="address">
 				<span class="left">
-					<a>地址</a>
-					<a style="color:red">*</a>
+					<a>所在地区</a>
 				</span>
 				<span class="right">
 					<input id="formCity" class="visable" name="formCity" type="text" value=""/>
 					<select class="district" name="selectDistrict" id="selectDistrict"> 
-					<option style="display:none" value="0">请选择区域</option>  
+					<option style="display:none" value="0">请选择省份</option>  
 					<option value="天河区">天河区</option>   
        				<option value="越秀区">越秀区</option>   
         			<option value="白云区">白云区</option>   
@@ -311,7 +113,7 @@
       				</select> 
       				<input id="districtValue" class="visable" name="district" type="text"/>  
       				<select class="comArea" name="selectComArea" id="selectComArea"> 
-					<option style="display:none" value="0">请选择商圈</option>  
+					<option style="display:none" value="0">请选择市区</option>  
         			<option value="1">宝岗</option>   
        				<option value="2">越秀区</option>   
         			<option value="3">白云区</option>   
@@ -324,92 +126,233 @@
        			    <option value="10">从化区</option>
        			    <option value="11">广州周边</option>
       				</select>   
+      				
+      				<input id="districtValue" class="visable" name="district" type="text"/>  
+      				<select class="comArea" name="selectComArea" id="selectComArea"> 
+					<option style="display:none" value="0">请选择地区</option>  
+        			<option value="1">宝岗</option>   
+       				<option value="2">越秀区</option>   
+        			<option value="3">白云区</option>   
+       				<option value="4">海珠区</option>   
+       			    <option value="5">番禺区</option>
+       			    <option value="6">荔湾区</option>
+       			    <option value="7">南沙区</option>
+       			    <option value="8">黄埔区</option>
+       			    <option value="9">花都区</option>
+       			    <option value="10">从化区</option>
+       			    <option value="11">广州周边</option>
+      				</select>  
+      				
       				<!-- <input id="comAreaValue" class="visable" name="comArea" type="text"/>  -->
-      				<input id="communityAddress" class="textInput" name="communityAddress" type="text"/>
+      				<!-- <input id="communityAddress" class="textInput" name="communityAddress" type="text"/> -->
 				</span>
 			</p>
-			<!-- 户型 -->
-			<p id="houseType">
-				<span class="left">
-					<a>户型</a>
-					<a style="color:red">*</a>
-				</span>
-				<span class="right">
-					<input id="roomNum" class="textInput" name="roomNum"
-					type="text" style="width:75px; margin-right:10px;"/><a>室</a>
-					<input id="hallNum" class="textInput" name="hallNum"
-					type="text" style="width:74px; margin-right:10px;"/><a>厅</a>
-					<input id="toiletNum" class="textInput" name="toiletNum"
-					type="text" style="width:75px; margin-right:10px;"/><a>卫</a>
-				</span>
-			</p>
-			<!-- 建筑面积 -->
+			
+			<!-- 昵称 -->
 			<p id="area">
 				<span class="left">
-					<a>建筑面积</a>
-					<a style="color:red">*</a>
+					<a>昵称</a>
 				</span>
 				<span class="right">
-					<input id="buildingArea" class="textInput" name="buildingArea"
-					type="text" style="width:185px; margin-right:10px;"/><a>平方米</a>
+					<input id="nickName" class="textInput" name="buildingArea"
+					type="text" style="width:185px; margin-right:10px;"/>
 				</span>
 			</p>
-			<!-- 装修程度 -->
-			<p id="fitment">
+			<!-- 性别 -->
+			<p >
 				<span class="left">
-					<a>装修程度</a>
+					<a>性别</a>
 				</span>
 				<span class="right">
-					<span id="fitSpan1" class="inner2">
-					 	<input id="fitmentRadio1" class="fitmentRadio " type="radio" name="fitmentType" value="gorgeousness"/>豪华装修
+					<span id="male" class="inner2">
+					 	<input id="fitmentRadio1" class="fitmentRadio " type="radio" name="fitmentType" value="gorgeousness"/>男
 					</span>
-					<span id="fitSpan2" class="inner2">
-					 	<input id="fitmentRadio2" class="fitmentRadio " type="radio" name="fitmentType" value="perfect"/>精装修
-					</span>
-					<span id="fitSpan3" class="inner2">
-					 	<input id="fitmentRadio3" class="fitmentRadio " type="radio" name="fitmentType" value="medium"/>中等装修
-					</span>
-					<span id="fitSpan4" class="inner2">
-					 	<input id="fitmentRadio4" class="fitmentRadio " type="radio" name="fitmentType" value="simpleness"/>简装修
-					</span>
-					<span id="fitSpan5" class="inner2">
-					 	<input id="fitmentRadio5" class="fitmentRadio " type="radio" name="fitmentType" value="rough"/>毛坯
+					<span id="female" class="inner2">
+					 	<input id="fitmentRadio2" class="fitmentRadio " type="radio" name="fitmentType" value="perfect"/>女
 					</span>
 				</span>
 			</p>
-			<!-- 朝向 -->
+			<!-- 真实姓名 -->
+			<p id="area">
+				<span class="left">
+					<a>真实姓名</a>
+				</span>
+				<span class="right">
+					<input id="realName" class="textInput" name="buildingArea"
+					type="text" style="width:185px; margin-right:10px;"/>
+				</span>
+			</p>
+			<!-- 生日 -->
+			<p id="address">
+				<span class="left">
+					<a>生日</a>
+				</span>
+				<span class="right">
+					<input id="year" class="visable" name="formCity" type="text" value=""/>
+					<select class="district" name="selectDistrict" id="selectDistrict"> 
+					<option style="display:none" value="0">请选择年份</option>  
+					<option value="1900">1900</option>
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option>     
+					<option value="1900">1900</option>
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option>  
+					<option value="1900">1900</option>
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+					<option value="1900">1900</option> 
+
+      				</select> 
+      				<input id="month" class="visable" name="district" type="text"/>  
+      				<select class="comArea" name="selectComArea" id="selectComArea"> 
+					<option style="display:none" value="0">请选择月份</option>  
+        			<option value="1">1</option>   
+       				<option value="2">2</option>   
+        			<option value="3">3</option>   
+       				<option value="4">4</option>   
+       			    <option value="5">5</option>
+       			    <option value="6">6</option>
+       			    <option value="7">7</option>
+       			    <option value="8">8</option>
+       			    <option value="9">9</option>
+       			    <option value="10">10</option>
+       			    <option value="11">11</option>
+       			    <option value="12">12</option>
+      				</select>   
+      				
+      				<input id="districtValue" class="visable" name="district" type="text"/>  
+      				<select class="comArea" name="selectComArea" id="selectComArea"> 
+					<option style="display:none" value="0">请选择日期</option>  
+        			<option value="1">1</option>   
+       				<option value="2">2</option>   
+        			<option value="3">3</option>   
+       				<option value="4">4</option>   
+       			    <option value="5">5</option>
+       			    <option value="6">6</option>
+       			    <option value="7">7</option>
+       			    <option value="8">8</option>
+       			    <option value="9">9</option>
+       			    <option value="10">10</option>
+       			    <option value="11">11</option>
+       			    <option value="12">12</option>
+        			<option value="1">1</option>   
+       				<option value="2">2</option>   
+        			<option value="3">3</option>   
+       				<option value="4">4</option>   
+       			    <option value="5">5</option>
+       			    <option value="6">6</option>
+       			    <option value="7">7</option>
+       			    <option value="8">8</option>
+       			    <option value="9">9</option>
+       			    <option value="10">10</option>
+       			    <option value="11">11</option>
+       			    <option value="12">12</option>  
+        			<option value="1">1</option>   
+       				<option value="2">2</option>   
+        			<option value="3">3</option>   
+       				<option value="4">4</option>   
+       			    <option value="5">5</option>
+       			    <option value="6">6</option>
+       			    <option value="7">7</option>
+       			    <option value="8">8</option>
+       			    <option value="9">9</option>
+       			    <option value="10">10</option>
+       			    <option value="11">11</option>
+       			    <option value="12">12</option>
+      				</select>  
+      				
+      				<!-- <input id="comAreaValue" class="visable" name="comArea" type="text"/>  -->
+      				<!-- <input id="communityAddress" class="textInput" name="communityAddress" type="text"/> -->
+				</span>
+			</p>
+			
 			<p>
 				<span class="left">
-					<a>朝向</a>
-					<a style="color:red">*</a>
+					<a>证件类型</a>
 				</span>
 				<span class="right">
-					<select class="direction" name="direction" id="direction"> 
+					<input id="year" class="visable" name="formCity" type="text" value=""/>
+					<select class="district" name="selectDistrict" id="selectDistrict"> 
+						<option value="身份证">身份证</option>
+						<option value="工作证">工作证</option>
+						<option value="军官证">军官证</option>
+						<option value="学生证">学生证</option>
+					</select>
+				</span>
+			</p>
+			
+			<!-- 证件类型 -->
+			<p id="asda">
+				<span class="left">
+					<a>证件类型</a>
+				</span>
+				<span class="right">
+					<select class="visable" name="direction" id="direction"> 
 					<option style="display: none" value="0">请选择</option>
-						<!-- <option value="1">南北</option>
-						<option value="2">南</option>
-						<option value="3">东南</option>
-						<option value="4">东</option>
-						<option value="5">东西</option>
-						<option value="6">北</option>
-						<option value="7">西</option>
-						<option value="8">西南</option>
-						<option value="9">东北</option>
-						<option value="10">西北</option> -->
-						<option value="南北">南北</option>
-						<option value="南">南</option>
-						<option value="东南">东南</option>
-						<option value="东">东</option>
-						<option value="东西">东西</option>
-						<option value="北">北</option>
-						<option value="西">西</option>
-						<option value="西南">西南</option>
-						<option value="东北">东北</option>
-						<option value="西北">西北</option>
+						<option value="身份证">身份证</option>
+						<option value="工作证">工作证</option>
+						<option value="军官证">军官证</option>
+						<option value="学生证">学生证</option>
+
+					</select>   
+				</span>
+			</p>
+			<!-- 证件号码 -->
+			<p id="username">
+				<span class="left">
+					<a>证件号码</a>
+				</span>
+				<span class="right">
+					<input id="cardId" class="textInput" 
+					type="text" name="communityName" style="width:285px;"/>
+				</span>
+			</p>
+			<!-- 教育程度 -->
+			<p>
+				<span class="left">
+					<a>教育程度</a>
+				</span>
+				<span class="right">
+					<select class="education" name="direction" id="direction"> 
+					<option style="display: none" value="0">请选择</option>
+						<option value="初中">初中</option>
+						<option value="高中">高中</option>
+						<option value="中专">中专</option>
+						<option value="大专">大专</option>
+						<option value="本科">本科</option>
+						<option value="硕士">硕士</option>
+						<option value="博士">博士</option>
+						<option value="其他">其他</option>
 
 				</select>   
 				</span>
 			</p>
+			<!-- 职务 -->
+			<p id="username">
+				<span class="left">
+					<a>职务</a>
+				</span>
+				<span class="right">
+					<input id="duty" class="textInput" 
+					type="text" name="communityName" style="width:285px;"/>
+				</span>
+			</p>
+			
+			
+			
+			
+			
 			<!-- 楼层 -->
 			<p id="floor">
 				<span class="left">
@@ -577,7 +520,7 @@
 		</form>
 	</div>
 
-
+	
 	
 	<footer>
 		<div class="wrapper footer">

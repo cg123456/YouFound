@@ -1,6 +1,6 @@
+@CHARSET "UTF-8";
 
-
-/*****************搜索框*****************/
+/*****************鎼滅储妗�****************/
 #search_land {
 	width:100%;
 	height: 80px;
@@ -8,8 +8,8 @@
 }
 
 #search_land #search{
-	position: absolute;		/*添加了absolute绝对位置，那么div就会默认显示在div界面的第一行，除非指定位置*/
-	margin: 18px 10%; 		/*auto设置了div居中*/
+	position: absolute;		/*娣诲姞浜哸bsolute缁濆浣嶇疆锛岄偅涔坉iv灏变細榛樿鏄剧ず鍦╠iv鐣岄潰鐨勭涓�锛岄櫎闈炴寚瀹氫綅缃*/
+	margin: 18px 10%; 		/*auto璁剧疆浜哾iv灞呬腑*/
 	z-index: 101;
 	width: 50%;
 	height: 44px;
@@ -17,14 +17,14 @@
 	background-color: #fff;
 	border:1px solid #DDD;
 }
-/*****************搜索框end*****************/
+/*****************鎼滅储妗唀nd*****************/
 
 
-/*详情展示页的css*/
+/*璇︽儏灞曠ず椤电殑css*/
 .detail {
 	width:100%;
-	min-height:1000px;
-	/* background-color:blue; */
+	min-height:3000px;
+	/* background-color:#EEE; */
 }
 
 .brief {
@@ -35,9 +35,14 @@
 	/* background-color:red; */
 }
 
-.brief .title {
+.title {
 	width:100%;
 	min-height:60px;
+	line-height: 60px; 
+	color:#222;
+	font-size:28px;
+	font-weigth:bold;
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
 }
 
 .brief .showimg {
@@ -98,7 +103,7 @@
 	height: 36px;
 	margin: 17px 10px;
 	/* float:left; */
-	line-height: 36px; /*单行文字居中*/
+	line-height: 36px; /*鍗曡鏂囧瓧灞呬腑*/
 	color:#222;
 	font-size:18px;
 	font-weigth:bold;
@@ -116,4 +121,52 @@
 }
 
 
+/*房源描述fangyuanmiaoshu*/
+
+.descript {
+	width:80%;
+	min-height:300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.descript span {
+	height:60px;
+	line-height:60px;
+}
+
+.descript .sourceDes {
+	line-height:50px;
+	margin:20px 50px auto 50px;
+	color:#222;
+	font-size:16px;
+	font-family: "lato-regular", Helvetica, Arial, sans-serif;
+}
+
+
+.images {
+	width:80%;
+	min-height:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.images img {
+	width:50%;
+	height:500px;
+	margin-left:25%;
+}
+
+.m {
+	width:80%;
+	min-height:570px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.m #container {
+	width:80%;
+	min-height:500px;
+	margin: 10px auto;
+}
 
